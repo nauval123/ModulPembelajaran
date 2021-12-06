@@ -1,25 +1,28 @@
-class Molecule {
-  int id;
-  String moleculename;
-  String modelpath;
+import 'dart:convert';
 
-  Molecule(
-    this.id,
-    this.moleculename,
-    this.modelpath,
+class Molecule {
+  late int id;
+  late String moleculename;
+  late String modelpath;
+
+  Molecule({
+    required this.id,
+    required this.moleculename,
+    required this.modelpath,}
   );
 
-
-  // int get id => id;
-  // String get moleculename => moleculename;
-  // String get modelpath=> modelpath;
-
-  Map<String,dynamic> toMap(){
-    Map<String,dynamic> map = Map<String,dynamic>();
-    map['id'] = this.id;
-    map['moleculename'] = moleculename;
-    map['modelpath'] = modelpath;
-    return map;
+Molecule.fromjson(Map<String,dynamic> map){
+    id =    map['id'] = this.id;
+    moleculename = map['moleculename'] = moleculename;
+    modelpath = map['modelpath'] = modelpath;
   }
+}
 
+List<Molecule> parsingData(String? json){
+    if (json == null) {
+  return [];
+}
+  Map <String,dynamic> map = jsonDecode(json);
+  final List parsed = map['3DMOLECULE'];
+  return parsed.map((json) => Molecule.fromjson(json)).toList();
 }

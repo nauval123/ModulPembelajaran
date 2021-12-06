@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modul_pembelajaran_kimia/helpers/dbhelpers.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
-import 'package:model_viewer/model_viewer.dart';
 
 class ModelList extends StatefulWidget {
   @override
@@ -9,21 +7,7 @@ class ModelList extends StatefulWidget {
 }
 
 class _ModelListState extends State<ModelList> {
-  late DbHelper _dbhelper =DbHelper();
   int count = 0;
-  late List<Molecule> listofmolecule;
-
-
-  @override
-  void initState() {
-    super.initState();
-    getListOfMolecule();
-    //  print(listofmolecule);
-  }
-   void getListOfMolecule()async{
-     await _dbhelper.initDb();
-    //  print(await _dbhelper.moleculemodel()); 
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +21,12 @@ class _ModelListState extends State<ModelList> {
         backgroundColor: Colors.black,
       ),
       body: FutureBuilder(
-        future: _dbhelper.moleculemodel(),
-        builder: (BuildContext context,AsyncSnapshot<dynamic> snapshot){
+        future: DefaultAssetBundle.of(context).loadString('assets/moleculemodel.json'),
+        builder: (context,AsyncSnapshot<dynamic> snapshot){
+          final List<Molecule> listofmolecule = parsingData(snapshot.data);
           if(snapshot.hasData){
             return ListView.builder(
-              itemCount: snapshot.data.length,
+              itemCount: listofmolecule.length,
               itemBuilder: (BuildContext context, int index) {
                 var item = snapshot.data[index];
                 return ListTile(
