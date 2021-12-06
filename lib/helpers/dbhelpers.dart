@@ -74,7 +74,7 @@ class DbHelper {
 
   // Convert the List<Map<String, dynamic> into a List<Dog>.
   return List.generate(maps.length, (i) {
-    return Molecule(maps[i]['id'], maps[i]['modelname'],maps[i]['modelpath']);
+    return Molecule(id: maps[i]['id'], modelpath:  maps[i]['modelpath'], moleculename: maps[i]['modelname'],);
     // return Molecule(
     //   // id: maps[i]['id'],
     //   // moleculename: maps[i]['name'],
