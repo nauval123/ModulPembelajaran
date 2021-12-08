@@ -50,9 +50,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     return Timer(duration, (){
     setState(() {
       print(username);
-    username.isEmpty ?
-           Navigator.pushReplacementNamed(context, '/InputName')
-           : Navigator.pushReplacementNamed(context, '/Dashboard');
+    // username.isEmpty ?
+           Navigator.pushReplacementNamed(context, '/InputName');
+          //  : Navigator.pushReplacementNamed(context, '/Dashboard');
         });
     });
   }  
