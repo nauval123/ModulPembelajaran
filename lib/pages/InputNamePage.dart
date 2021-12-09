@@ -21,25 +21,30 @@ class _InputNameState extends State<InputName> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
-              color: Colors.blue[300]
+              color: Colors.white54
             ),
             child: Column(
           children: [
+            Spacer(),
+             Flexible(
+            flex: 3,
+            child:  Text(
+                'Selamat Datang di Modul Kimia Asyik',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  ),
+                ),
+            ),
             Flexible(
               flex: 4,
               child: Container(
-                padding: EdgeInsets.only(top: 30),
+                padding: EdgeInsets.only(top: 20),
                 child: Image.asset('assets/Image/Bab1.png'),
                 )
               ),
             Flexible(
-            flex: 3,
-            child:  Text(
-                'Belajar Makin Mudah',
-                ),
-            ),
-            Flexible(
-              flex: 5,
+              flex: 4,
               child: Form(
             autovalidateMode: AutovalidateMode.always,
             key: usernameKey,
@@ -68,7 +73,7 @@ class _InputNameState extends State<InputName> {
                     ),
                     decoration: InputDecoration(
                       hintStyle: TextStyle(color: Colors.white),
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                       hintText: "Masukkan Nama Kamu",
                     ),
                   ),
@@ -83,27 +88,29 @@ class _InputNameState extends State<InputName> {
                   // ),
                   child: Container( 
                     padding: EdgeInsets.all(25),
-                    width: MediaQuery.of(context).size.width/3,
-                    height: MediaQuery.of(context).size.height/10,
+                    width: MediaQuery.of(context).size.width/1.2,
+                    height: MediaQuery.of(context).size.height/12,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.blueAccent[200]
                     ),
-                    child: Text(
-                      "Simpan",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
+                    child: Center(
+                      child: Text(
+                        "Simpan",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
                   //fungsi async lambda untuk add ke firestore
                   onPressed: () async {
-                    print('simpan'+usernameController.text);
+                    // print('simpan'+usernameController.text);
                     final SharedPreferences prefs = await SharedPreferences.getInstance();
                     prefs.setString('username', usernameController.text);
-                    final datausername = prefs.getString('username');
-                    print(datausername);
+                    Navigator.of(context).pushReplacementNamed('/Dashboard');
+                    // final datausername = prefs.getString('username');
+                    // print(datausername);
                   },
                 ),
                 ),

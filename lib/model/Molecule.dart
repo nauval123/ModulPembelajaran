@@ -12,9 +12,9 @@ class Molecule {
   );
 
 Molecule.fromjson(Map<String,dynamic> map){
-    id =    map['id'] = this.id;
-    moleculename = map['moleculename'] = moleculename;
-    modelpath = map['modelpath'] = modelpath;
+    id =   int.parse(map["id"]) ;
+    moleculename = map["moleculename"];
+    modelpath = map["modelpath"] ;
   }
 }
 
@@ -23,6 +23,6 @@ List<Molecule> parsingData(String? json){
   return [];
 }
   Map <String,dynamic> map = jsonDecode(json);
-  final List parsed = map['3DMOLECULE'];
+  final List parsed = map["3DMOLECULE"];
   return parsed.map((json) => Molecule.fromjson(json)).toList();
 }

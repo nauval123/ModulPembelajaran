@@ -15,11 +15,11 @@ class _ModelListState extends State<ModelList> {
     //   listofmolecule = <Molecule>[];
     // }
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter Model Viewer Demo"),
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.black,
-      ),
+      // appBar: AppBar(
+      //   title: Text("Flutter Model Viewer Demo"),
+      //   automaticallyImplyLeading: false,
+      //   backgroundColor: Colors.black,
+      // ),
       body: FutureBuilder(
         future: DefaultAssetBundle.of(context).loadString('assets/moleculemodel.json'),
         builder: (context,AsyncSnapshot<dynamic> snapshot){
@@ -28,10 +28,14 @@ class _ModelListState extends State<ModelList> {
             return ListView.builder(
               itemCount: listofmolecule.length,
               itemBuilder: (BuildContext context, int index) {
-                var item = snapshot.data[index];
-                return ListTile(
-                  title: Text(item.moleculename),
-                  leading: Text(item.id.toString()),
+                return InkWell(
+                  onTap:(){ Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);},
+                  child: Card(
+                    child: ListTile(
+                      title: Text(listofmolecule[index].moleculename),
+                      leading: Text(listofmolecule[index].id.toString()),
+                    ),
+                  ),
                 );
               },
             );

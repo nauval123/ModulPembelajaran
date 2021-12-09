@@ -1,6 +1,7 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodellist.dart';
+import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/3DModelAtom.dart';
 import 'package:modul_pembelajaran_kimia/pages/DashboardPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/InputNamePage.dart';
 import 'package:modul_pembelajaran_kimia/pages/QuizPage.dart';
@@ -32,6 +33,7 @@ class _MyAppState extends State<MyApp> {
         '/InputName':(context)=>InputName(),
         '/Quiz':(context)=>Quiz(),
         '/3D Model Atom':(context)=>ModelList(),
+        '/moleculemodel':(context)=>ModelAtomPage(),
       },
     );
   }

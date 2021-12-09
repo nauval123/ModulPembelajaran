@@ -1,0 +1,15 @@
+
+{
+    "3DMOLECULE":[
+      {
+      "id":"1",
+      "moleculename":"Carbon Dioksida",
+      "modelpath":"co2.glb"
+      },
+      {
+      "id":"2",
+      "moleculename":"Carbon Dioksida2",
+      "modelpath":"co2.glb"
+      }
+    ]
+}

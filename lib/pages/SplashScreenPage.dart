@@ -49,10 +49,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     // _fade=!_fade;
     return Timer(duration, (){
     setState(() {
-      print(username);
-    // username.isEmpty ?
-           Navigator.pushReplacementNamed(context, '/InputName');
-          //  : Navigator.pushReplacementNamed(context, '/Dashboard');
+      // print(username);
+    username.isEmpty ?
+           Navigator.pushReplacementNamed(context, '/InputName')
+           : Navigator.pushReplacementNamed(context, '/Dashboard');
         });
     });
   }  
@@ -62,13 +62,14 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Hero(
-          tag: 'heroLogo',
-         child: FadeTransition(
+        child:FadeTransition(
            opacity: _animation,
-           child: Container(decoration: BoxDecoration(color: Colors.blue[800]),),
+           child: Container(
+             decoration: BoxDecoration(
+               color: Colors.blue[800]),
+               ),
           //  child: Image.asset(),
-         )) ,),
+         ) ,),
     );
   }
 }

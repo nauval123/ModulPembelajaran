@@ -16,63 +16,62 @@ CustomCardWidget(
     return InkWell(
       onTap: () {
         print(judulcard);
-        Navigator.pushNamed(context,'/'+judulcard);
+        Navigator.of(context).pushNamed('/'+judulcard);
       },
       child: Container(
-        height: MediaQuery.of(context).size.height/4,
           child: Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
-            // color: Colors.blue.shade200,
             elevation: 10,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Flexible(
-                  flex: 3,
-                  child:Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(15)),
-                    color: Colors.blue[200],
-                    image:  DecorationImage(
-                      colorFilter: new ColorFilter.mode(Colors.blue.withOpacity(0.7), BlendMode.dstATop),
-                      image: AssetImage((imagepaths),),
-                      fit: BoxFit.fitWidth
-                      )
-                  ),
-                ),
-                ),
-                Flexible(
-                  flex:4,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Container(
-                      //   padding: EdgeInsets.only(top: 10,left: 10),
-                      //   child: Text("Bab 1",
-                      //     style: TextStyle(
-                      //       fontSize: MediaQuery.of(context).size.height/50,
-                      //       fontWeight: FontWeight.bold,
-                      //     ),
-                      //   ),
-                      // ),
-                      Container(
-                        // padding: EdgeInsets.only(top: 10,left: 10),
-                        child: Text(judulcard,
-                          style: TextStyle(
-                            fontSize: MediaQuery.of(context).size.height/40,
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                  )
-              ],
+            child:
+           ListTile(
+              leading: Icon(Icons.accessibility_new_rounded,color: Colors.green,),
+              title: Text(
+                this.judulcard,
+                style: TextStyle(fontSize: 12,
+                fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text('easy'),
+              trailing:  Icon(Icons.arrow_forward_ios_rounded,color: Colors.green,),
+              ),   
             ),
-          ),
+            //  Column(
+            //   mainAxisSize: MainAxisSize.min,
+            //   children: <Widget>[
+            //     Flexible(
+            //       flex: 3,
+            //       child:Container(
+            //       decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(15)),
+            //         color: Colors.blue[200],
+            //         image:  DecorationImage(
+            //           colorFilter: new ColorFilter.mode(Colors.blue.withOpacity(0.7), BlendMode.dstATop),
+            //           image: AssetImage((imagepaths),),
+            //           fit: BoxFit.fitWidth
+            //           )
+            //       ),
+            //     ),
+            //     ),
+            //     Flexible(
+            //       flex:4,
+            //       child: Column(
+            //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: [
+            //           Container(
+            //             child: Text(judulcard,
+            //               style: TextStyle(
+            //                 fontSize: MediaQuery.of(context).size.height/40,
+            //                 fontWeight: FontWeight.bold
+            //               ),
+            //             ),
+            //           ),
+            //         ],
+            //       )
+            //       )
+            //   ],
+            // ),
         ),
       );
   }
