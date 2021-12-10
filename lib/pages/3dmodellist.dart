@@ -8,27 +8,81 @@ class ModelList extends StatefulWidget {
 
 class _ModelListState extends State<ModelList> {
   int count = 0;
+  late List <Molecule> _listofmolecule;
+  late Future  _future;
+  late List <Molecule> _list;
+
+  Future makealist () async{
+   var json = await DefaultAssetBundle.of(context).loadString('assets/moleculemodel.json');
+   setState(() {
+     _listofmolecule = parsingData(json);
+     _list = parsingData(json);
+   });
+
+   return _listofmolecule;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _future = makealist();
+  }
 
   @override
   Widget build(BuildContext context) {
-    //  if (listofmolecule == null) {
-    //   listofmolecule = <Molecule>[];
-    // }
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Flutter Model Viewer Demo"),
-      //   automaticallyImplyLeading: false,
-      //   backgroundColor: Colors.black,
-      // ),
+      appBar: AppBar(
+        title: Text('Model Molekul'),
+        centerTitle: true,
+      ),
       body: FutureBuilder(
-        future: DefaultAssetBundle.of(context).loadString('assets/moleculemodel.json'),
+        future: _future,
         builder: (context,AsyncSnapshot<dynamic> snapshot){
-          final List<Molecule> listofmolecule = parsingData(snapshot.data);
+          
           if(snapshot.hasData){
             return ListView.builder(
-              itemCount: listofmolecule.length,
+              itemCount: _listofmolecule.length+1,
               itemBuilder: (BuildContext context, int index) {
-                return InkWell(
+                return index == 0 ?_searchBar() : _listmolecule(_listofmolecule, index-1);
+              },
+            );
+          }else {
+            return Center(child: CircularProgressIndicator());
+          }
+        },
+        ),
+    );
+  }
+
+  Widget _searchBar(){
+       return Padding(
+        padding: EdgeInsets.all(5),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.blue.shade100,width: 2),
+            borderRadius: BorderRadius.circular(5),
+            color: Colors.blue.shade300
+          ),
+          child: TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.search,color: Colors.white,),
+              // contentPadding: EdgeInsets.all(10),
+              fillColor: Colors.blue[100],
+              hintText: 'Cari Model Atom...',
+              hintStyle: TextStyle(color: Colors.white),
+            //   focusedBorder:OutlineInputBorder(
+            //   borderSide: const BorderSide( width: 0.5),
+            //   borderRadius: BorderRadius.circular(15.0),
+            // ),
+            ),
+            onChanged: _filter,
+          ),
+        ),
+    );
+  }
+
+  Widget _listmolecule(List<Molecule> listofmolecule,int index){
+     return InkWell(
                   onTap:(){ Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);},
                   child: Card(
                     child: ListTile(
@@ -37,21 +91,27 @@ class _ModelListState extends State<ModelList> {
                     ),
                   ),
                 );
-              },
-            );
-          }else {
-            return Center(child: CircularProgressIndicator());
-          }
-        },
-        ),
-      // body: ModelViewer(
-      //   backgroundColor: Colors.teal[50],
-      //   src: 'assets/molecule/co2.glb',
-      //   alt: "A 3D model of an table soccer",
-      //   autoPlay: true,
-      //   autoRotate: false,
-      //   cameraControls: true,
-      // ),
-    );
+    }
+
+    void _filter(String word){
+       List<Molecule> results = [];
+        if (word.isEmpty) {
+          results = _list;
+          setState(() {
+          print(results.toString());
+          _listofmolecule = results;
+        });
+
+        } else {
+          results = _listofmolecule
+              .where((mol) =>
+                  mol.moleculename.toLowerCase().contains(word.toLowerCase()))
+              .toList();
+      setState(() {
+          print(results.toString());
+          _listofmolecule = results;
+        });
+        }
+    }
   }
-}
+

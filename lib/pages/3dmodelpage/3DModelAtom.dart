@@ -12,23 +12,59 @@ class ModelAtomPage extends StatelessWidget {
 
     return SafeArea(
         child: Scaffold(
-            body: Column(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text('Model Atom 3D'),
+          ),
+            body: Stack(
               children: [
-                Flexible(
-                  flex: 2,
-                  child: ModelViewer(
+              ModelViewer(
+                arScale: "auto",
                   backgroundColor: Colors.teal[50],
                   src: 'assets/molecule/'+informationofmolecule.modelpath,
                   alt: informationofmolecule.moleculename,
                   autoPlay: true,
                   autoRotate: false,
                   cameraControls: true,
-                          ),
-                ),
-                Spacer(),
-                Flexible(child: Container(child: Text('Karbon Dioksida, hasil pemabakaran sangat berbahaya'),))
+              ),
+              DraggableScrollableSheet(
+                initialChildSize: 0.05,
+                minChildSize: 0.05,
+                maxChildSize: 0.5,
+                builder:  (BuildContext context,ScrollController scrollController){
+                    return Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)),
+                        color: Colors.white,
+                      ),
+                      margin: EdgeInsets.only(left: 10,right: 10),
+                      child: SingleChildScrollView(
+                        controller:  scrollController,
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: 20,bottom: 30),
+                              height: 10,width: 150,
+                              decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.blue[300],
+                              ),
+                            ),
+                            Center(child: Text("Karbon DIoksida"),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(20),
+                              child: Text("Karbon dioksida adalah gas atmosfir yang terdiri dari dua atom Oksigen dan satu atom Karbon.Campuran kimia yang amat dikenal luas, sering disebut dengan rumus kimianya CO2. Karbon Dioksida adalah bagian dari atmosfir bumi, merupakan gas yang kita keluarkan pada saat bernafas dan digunakan oleh tanaman untuk proses fotosintesis. Karbon Dioksida juga adalah gas yang sama bentuk cairan maupun gas, dan juga dalam bentuk padatnya yang umumnya dikenal dengan nama dry ice (es kering).")
+                            ,)
+                          ],
+                        ),
+                      ),
+                    );
+                  },                
+                )
               ],
-            ),
+            )
+            
         ),
     );
   }

@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 class CustomCardWidget extends StatelessWidget {
 late String judulcard;
 late String imagepath;
+late String deskripsi;
+
 final String imagepaths ='assets/Image/Bab2.jpg' ;
 
 
 CustomCardWidget(
   this.judulcard,
+  // this.deskripsi,
+  // this.imagepath
 );
 
   @override
@@ -32,7 +36,7 @@ CustomCardWidget(
                 style: TextStyle(fontSize: 12,
                 fontWeight: FontWeight.bold),
               ),
-              subtitle: Text('easy'),
+              subtitle: Text('easy',style: TextStyle(color: Colors.grey),),
               trailing:  Icon(Icons.arrow_forward_ios_rounded,color: Colors.green,),
               ),   
             ),

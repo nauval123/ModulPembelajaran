@@ -42,8 +42,8 @@ class _DashboardState extends State<Dashboard> {
            padding: EdgeInsets.only(top: 10,left: 5,bottom: 10),
            child: Column(
              children: [
-               Text('Hello',style: TextStyle(color: Colors.grey[400],fontSize: 15),),
-               Text(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous",style: TextStyle(color:Colors.black,fontSize: 23),),
+               Text('Hello',style: TextStyle(color: Colors.grey[300],fontSize: 15),),
+               Text(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous",style: TextStyle(color:Colors.white,fontSize: 20),),
              ],
            ),
          ),
@@ -53,12 +53,13 @@ class _DashboardState extends State<Dashboard> {
              child: Container(child:Icon(Icons.person))
              )
              ],
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.blue[300],
           elevation: 0.0,
         ),
         // backgroundColor: Colors.blueGrey[50],
         extendBodyBehindAppBar: true,
         body:DashboardBody(),
+        backgroundColor: Colors.blue[100],
         // _halamannavbar[_indexnavbar],
         // bottomNavigationBar: BottomNavigationBar(
         //   currentIndex: _indexnavbar,
@@ -104,6 +105,7 @@ class DashboardBody extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height/4,
                decoration: BoxDecoration(
+                 borderRadius: BorderRadius.circular(10),
                  image: DecorationImage(
                    fit: BoxFit.fill,
                    image: AssetImage('assets/Image/Bab2.jpg')),
@@ -112,18 +114,20 @@ class DashboardBody extends StatelessWidget {
               SizedBox(height: 30,),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(" Yuk Mari Belajar!",style: TextStyle(color: Colors.white,fontSize: 15),),
+                  SizedBox(height: MediaQuery.of(context).size.height/50,),
                   CustomCardWidget('Capaian Pembelajaran'),
-                  SizedBox(height: MediaQuery.of(context).size.height/25,),
+                  SizedBox(height: MediaQuery.of(context).size.height/50,),
                   CustomCardWidget('Materi'),
-                  SizedBox(height: MediaQuery.of(context).size.height/25,),
+                  SizedBox(height: MediaQuery.of(context).size.height/50,),
                   CustomCardWidget('Quiz'),
-                  SizedBox(height: MediaQuery.of(context).size.height/25,),
+                  SizedBox(height: MediaQuery.of(context).size.height/50,),
                   CustomCardWidget('3D Model Atom'),
-                  SizedBox(height: MediaQuery.of(context).size.height/25,),
+                  SizedBox(height: MediaQuery.of(context).size.height/50,),
                   CustomCardWidget('Daftar Pustaka'),
-                  SizedBox(height: MediaQuery.of(context).size.height/25,),
+                  SizedBox(height: MediaQuery.of(context).size.height/50,),
                   CustomCardWidget('Settings'),
                   ],
                 ),
