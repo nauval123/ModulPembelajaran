@@ -37,29 +37,25 @@ class _DashboardState extends State<Dashboard> {
         if(snapshot.hasData){
           _usernamedata= snapshot.data.toString();
           return Scaffold(
-        appBar: AppBar(
-         title: Padding(
-           padding: EdgeInsets.only(top: 10,left: 5,bottom: 10),
-           child: Column(
-             children: [
-               Text('Hello',style: TextStyle(color: Colors.grey[300],fontSize: 15),),
-               Text(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous",style: TextStyle(color:Colors.white,fontSize: 20),),
-             ],
-           ),
-         ),
-         actions: [
-           Padding(
-             padding: EdgeInsets.only(top: 10,right: 20,bottom: 10),
-             child: Container(child:Icon(Icons.person))
-             )
-             ],
-          backgroundColor: Colors.blue[300],
-          elevation: 0.0,
-        ),
+        // appBar: AppBar(
+        //  title: Padding(
+        //    padding: EdgeInsets.only(top: 10,left: 5,bottom: 10),
+        //    child: 
+        //    ),
+        //  ),
+        //  actions: [
+        //    Padding(
+        //      padding: EdgeInsets.only(top: 10,right: 20,bottom: 10),
+        //      child: Container(child:Icon(Icons.person))
+        //      )
+        //      ],
+        //   backgroundColor: Colors.blue[100],
+        //   elevation: 0.0,
+        // ),
         // backgroundColor: Colors.blueGrey[50],
         extendBodyBehindAppBar: true,
-        body:DashboardBody(),
-        backgroundColor: Colors.blue[100],
+        body:DashboardBody(_usernamedata),
+        backgroundColor: Colors.blue[200],
         // _halamannavbar[_indexnavbar],
         // bottomNavigationBar: BottomNavigationBar(
         //   currentIndex: _indexnavbar,
@@ -83,11 +79,11 @@ class _DashboardState extends State<Dashboard> {
 
 
 class DashboardBody extends StatelessWidget {
-  // final String usernamedata;
+  late final String _usernamedata;
  
-  // DashboardBody(
-  //   [this.usernamedata = 'anonymous']
-  // );
+  DashboardBody(
+    this._usernamedata,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -96,39 +92,51 @@ class DashboardBody extends StatelessWidget {
         child: Container(
           // height: MediaQuery.of(context).size.height,
           // width:  MediaQuery.of(context).size.width,
-          padding: EdgeInsets.all(MediaQuery.of(context).size.height/20),
+          padding: EdgeInsets.all(MediaQuery.of(context).size.height/25),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Hello',style: TextStyle(color: Colors.grey[300],fontSize:15),),
+                        Text(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous",style: TextStyle(color:Colors.white,fontSize: 35),),
+                     ],
+                    ),
+                    SizedBox(width: 200,),
+                    Icon(Icons.person_pin,color: Colors.white,size: 70,)
+                  ],
+                ),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height/4,
-               decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(10),
-                 image: DecorationImage(
-                   fit: BoxFit.fill,
-                   image: AssetImage('assets/Image/Bab2.jpg')),
-               ),
+                height: MediaQuery.of(context).size.height/10,
+              //  decoration: BoxDecoration(
+              //    borderRadius: BorderRadius.circular(10),
+              //    image: DecorationImage(
+              //      fit: BoxFit.fill,
+              //      image: AssetImage('assets/Image/Bab2.jpg')),
+              //  ),
               ),
               SizedBox(height: 30,),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(" Yuk Mari Belajar!",style: TextStyle(color: Colors.white,fontSize: 15),),
                   SizedBox(height: MediaQuery.of(context).size.height/50,),
-                  CustomCardWidget('Capaian Pembelajaran'),
+                  CustomCardWidget('Capaian Pembelajaran','Ketahui Tujuan Belajar'),
                   SizedBox(height: MediaQuery.of(context).size.height/50,),
-                  CustomCardWidget('Materi'),
+                  CustomCardWidget('Materi','Materi Ikatan Kimia'),
                   SizedBox(height: MediaQuery.of(context).size.height/50,),
-                  CustomCardWidget('Quiz'),
+                  CustomCardWidget('Quiz','Uji Pengetahuanmu'),
                   SizedBox(height: MediaQuery.of(context).size.height/50,),
-                  CustomCardWidget('3D Model Atom'),
+                  CustomCardWidget('3D Model Atom','Bentuk Bentuk Atom?'),
                   SizedBox(height: MediaQuery.of(context).size.height/50,),
-                  CustomCardWidget('Daftar Pustaka'),
-                  SizedBox(height: MediaQuery.of(context).size.height/50,),
-                  CustomCardWidget('Settings'),
+                  // CustomCardWidget('Daftar Pustaka'),
+                  // SizedBox(height: MediaQuery.of(context).size.height/50,),
+                  // CustomCardWidget('Settings'),
                   ],
                 ),
             ],

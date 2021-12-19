@@ -53,6 +53,7 @@ flutter:
     - assets/
     - assets/Image/
     - assets/logo/
+    - assets/logo/icons/
     - assets/molecule/
   #   - images/a_dot_ham.jpeg
 

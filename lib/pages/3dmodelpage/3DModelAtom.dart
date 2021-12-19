@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: import_of_legacy_library_into_null_safe
 import 'package:model_viewer/model_viewer.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
 
