@@ -37,35 +37,9 @@ class _DashboardState extends State<Dashboard> {
         if(snapshot.hasData){
           _usernamedata= snapshot.data.toString();
           return Scaffold(
-        // appBar: AppBar(
-        //  title: Padding(
-        //    padding: EdgeInsets.only(top: 10,left: 5,bottom: 10),
-        //    child: 
-        //    ),
-        //  ),
-        //  actions: [
-        //    Padding(
-        //      padding: EdgeInsets.only(top: 10,right: 20,bottom: 10),
-        //      child: Container(child:Icon(Icons.person))
-        //      )
-        //      ],
-        //   backgroundColor: Colors.blue[100],
-        //   elevation: 0.0,
-        // ),
-        // backgroundColor: Colors.blueGrey[50],
         extendBodyBehindAppBar: true,
         body:DashboardBody(_usernamedata),
-        backgroundColor: Colors.blue[200],
-        // _halamannavbar[_indexnavbar],
-        // bottomNavigationBar: BottomNavigationBar(
-        //   currentIndex: _indexnavbar,
-        //   onTap: _onTapNavbar,
-        //   items: [
-        //   BottomNavigationBarItem(label: "Materi",icon: Icon(Icons.library_books_rounded)),
-        //   BottomNavigationBarItem(label: "Quiz",icon: Icon(Icons.question_answer)),
-        //   BottomNavigationBarItem(label: "Tentang",icon: Icon(Icons.quiz_rounded)),
-        //   ],
-        //   ),
+        backgroundColor: Colors.blue[300],
       );}else{
         return CircularProgressIndicator();
       }
@@ -90,8 +64,6 @@ class DashboardBody extends StatelessWidget {
     return SafeArea(
       child:SingleChildScrollView(
         child: Container(
-          // height: MediaQuery.of(context).size.height,
-          // width:  MediaQuery.of(context).size.width,
           padding: EdgeInsets.all(MediaQuery.of(context).size.height/25),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -99,41 +71,36 @@ class DashboardBody extends StatelessWidget {
             children: [
               Container(
                 child: Row(
+                  mainAxisAlignment:  MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Hello',style: TextStyle(color: Colors.grey[300],fontSize:15),),
-                        Text(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous",style: TextStyle(color:Colors.white,fontSize: 35),),
-                     ],
-                    ),
-                    SizedBox(width: 200,),
+                        children: [
+                         Text('Hello',style: TextStyle(color: Colors.grey[300],fontSize:10),),
+                          Text(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous",style: TextStyle(color:Colors.white,fontSize:30),),
+                       ],
+                      ),
+                    SizedBox(width: MediaQuery.of(context).size.width/2,),
                     Icon(Icons.person_pin,color: Colors.white,size: 70,)
                   ],
                 ),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height/10,
-              //  decoration: BoxDecoration(
-              //    borderRadius: BorderRadius.circular(10),
-              //    image: DecorationImage(
-              //      fit: BoxFit.fill,
-              //      image: AssetImage('assets/Image/Bab2.jpg')),
-              //  ),
+                height: MediaQuery.of(context).size.height/7,
               ),
               SizedBox(height: 30,),
               Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: MediaQuery.of(context).size.height/50,),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
                   CustomCardWidget('Capaian Pembelajaran','Ketahui Tujuan Belajar'),
-                  SizedBox(height: MediaQuery.of(context).size.height/50,),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
                   CustomCardWidget('Materi','Materi Ikatan Kimia'),
-                  SizedBox(height: MediaQuery.of(context).size.height/50,),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
                   CustomCardWidget('Quiz','Uji Pengetahuanmu'),
-                  SizedBox(height: MediaQuery.of(context).size.height/50,),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
                   CustomCardWidget('3D Model Atom','Bentuk Bentuk Atom?'),
-                  SizedBox(height: MediaQuery.of(context).size.height/50,),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
                   // CustomCardWidget('Daftar Pustaka'),
                   // SizedBox(height: MediaQuery.of(context).size.height/50,),
                   // CustomCardWidget('Settings'),

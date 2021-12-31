@@ -1,7 +1,6 @@
 {
     "Quiz":[
         {   
-            "id" : "1",
             "question": "How's Life?",
             "answers": [
               {"choices": "a","answerText": "fuck", "score": true},
@@ -11,8 +10,34 @@
             ]
           },
           {   
-            "id" : "2",
             "question": "Are You Okay?",
+            "answers": [
+              {"choices": "a","answerText": "im okay", "score": false},
+              {"choices": "b","answerText": "Fuck off", "score": true},
+              {"choices": "c","answerText": "im okays", "score": false},
+              {"choices": "d","answerText": "im not okay", "score": false}
+            ]
+          },
+          {   
+            "question": "Are You Okay?",
+            "answers": [
+              {"choices": "a","answerText": "im okay", "score": false},
+              {"choices": "b","answerText": "Fuck off", "score": true},
+              {"choices": "c","answerText": "im okays", "score": false},
+              {"choices": "d","answerText": "im not okay", "score": false}
+            ]
+          },
+          {   
+            "question": "Really?",
+            "answers": [
+              {"choices": "a","answerText": "im okay", "score": false},
+              {"choices": "b","answerText": "Fuck off", "score": true},
+              {"choices": "c","answerText": "im okays", "score": false},
+              {"choices": "d","answerText": "im not okay", "score": false}
+            ]
+          },
+          {   
+            "question": "who are u?",
             "answers": [
               {"choices": "a","answerText": "im okay", "score": false},
               {"choices": "b","answerText": "Fuck off", "score": true},

@@ -38,7 +38,7 @@ class _InputNameState extends State<InputName> {
                 ),
                 child: Column(
                   children: [
-                    Spacer(flex: 1,),
+                    Spacer(),
                     Flexible(
                       flex: 1,
                       child: Text(
@@ -71,7 +71,7 @@ class _InputNameState extends State<InputName> {
                     //       ),
                     // ),
                      Flexible(
-                       flex: 2,
+                       flex: 3,
                        child: Form(
                       autovalidateMode: AutovalidateMode.always,
                       key: usernameKey,
@@ -80,12 +80,13 @@ class _InputNameState extends State<InputName> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                         Container(
-                          margin: EdgeInsets.all(10),
+                          margin: EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Colors.blueGrey[50],
                             borderRadius: BorderRadius.circular(25),
                           ),
-                          width: MediaQuery.of(context).size.width/1.2,
+                          width: MediaQuery.of(context).orientation == Orientation.portrait? MediaQuery.of(context).size.width/1.2:MediaQuery.of(context).size.width/2,
+                          height: MediaQuery.of(context).orientation == Orientation.portrait?MediaQuery.of(context).size.height/10:MediaQuery.of(context).size.height/6,
                           child:TextFormField(
                               validator: (value) {
                                 if (value!.isEmpty || value.trim().length == 0) {
@@ -124,7 +125,7 @@ class _InputNameState extends State<InputName> {
                       //   borderRadius: BorderRadius.circular(10),
                       // ),
                       child: Container( 
-                        padding: EdgeInsets.all(25),
+                        padding: EdgeInsets.all(5),
                         width: MediaQuery.of(context).size.width/2.5,
                         height: MediaQuery.of(context).size.height/12,
                         decoration: BoxDecoration(

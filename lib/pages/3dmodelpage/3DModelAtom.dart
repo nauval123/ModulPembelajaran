@@ -18,13 +18,15 @@ class ModelAtomPage extends StatelessWidget {
             body: Stack(
               children: [
               ModelViewer(
-                arScale: "auto",
+                  arScale: "auto",
                   backgroundColor: Colors.teal[50],
                   src: 'assets/molecule/'+informationofmolecule.modelpath,
                   alt: informationofmolecule.moleculename,
-                  autoPlay: true,
+                  autoPlay: false,
                   autoRotate: false,
                   cameraControls: true,
+                  // arModes: [],
+                  ar: true,
               ),
               DraggableScrollableSheet(
                 initialChildSize: 0.05,

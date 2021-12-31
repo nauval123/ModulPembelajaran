@@ -36,6 +36,9 @@ dev_dependencies:
   model_viewer: ^0.8.1
   sqflite: any
   path_provider: any
+  arcore_flutter_plugin: any
+  # permission_handler: ^8.2.5
+  provider: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -55,6 +58,7 @@ flutter:
     - assets/logo/
     - assets/logo/icons/
     - assets/molecule/
+    # - assets/fonts/VarelaRound-Regular.tff
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -68,11 +72,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: QuickSand
+      fonts:
+        - asset: fonts/Quicksand-SemiBold.ttf
+        # - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
