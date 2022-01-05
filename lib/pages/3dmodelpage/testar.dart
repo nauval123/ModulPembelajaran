@@ -1,7 +1,7 @@
 // @dart=2.9
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
-import 'package:vector_math/vector_math_64.dart' as vector;
+// import 'package:vector_math/vector_math_64.dart' as vector;
 
 class ARPage extends StatefulWidget {
   const ARPage({ Key key }) : super(key: key);
@@ -22,6 +22,7 @@ class _ARPageState extends State<ARPage> {
         ),
         body: ArCoreView(
           onArCoreViewCreated: _onArCoreViewCreated,
+          enableTapRecognizer: true,
         ),
       ),
     );
@@ -29,18 +30,27 @@ class _ARPageState extends State<ARPage> {
 
   void _onArCoreViewCreated(ArCoreController controller) {
     arCoreController = controller;
-    _3dmodelmolecule(controller);
+    arCoreController.onPlaneTap=_onHandleTap;
+    // _3dmodelMolecule(controller);
     // _addSphere(arCoreController);
     // _addCylindre(arCoreController);
     // _addCube(arCoreController);
   }
 
-  void _3dmodelmolecule (ArCoreController controller){
+  void _onHandleTap(List<ArCoreHitTestResult> hits){
+    final hit = hits.first;
+    _modelMolecule(hit);
+  } 
+
+  void _modelMolecule (ArCoreHitTestResult plane){
     final model = ArCoreReferenceNode(
-      objectUrl:"assets/molecule/SF4.glb",
-      position:  vector.Vector3(1.0, 0.0, 0.0),
+      object3DFileName: "sf4.sfb",
+      // objectUrl:"assets/molecule/SF4.glb",
+      position:  plane.pose.translation,
+      rotation: plane.pose.rotation,
+
       );
-      controller.addArCoreNode(model);
+      arCoreController.addArCoreNodeWithAnchor(model);
   }
 
   // void _addSphere(ArCoreController controller) {

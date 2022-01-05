@@ -22,15 +22,15 @@ class ModelAtomPage extends StatelessWidget {
                   backgroundColor: Colors.teal[50],
                   src: 'assets/molecule/'+informationofmolecule.modelpath,
                   alt: informationofmolecule.moleculename,
-                  autoPlay: false,
-                  autoRotate: false,
+                  // autoPlay: false,
+                  // autoRotate: false,
                   cameraControls: true,
                   // arModes: [],
-                  ar: true,
+                  // ar: true,
               ),
               DraggableScrollableSheet(
-                initialChildSize: 0.05,
-                minChildSize: 0.05,
+                initialChildSize: 0.1,
+                minChildSize: 0.1,
                 maxChildSize: 0.5,
                 builder:  (BuildContext context,ScrollController scrollController){
                     return Container(
@@ -38,7 +38,7 @@ class ModelAtomPage extends StatelessWidget {
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)),
                         color: Colors.white,
                       ),
-                      margin: EdgeInsets.only(left: 10,right: 10),
+                      margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
                       child: SingleChildScrollView(
                         controller:  scrollController,
                         child: Column(

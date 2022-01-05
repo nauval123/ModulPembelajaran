@@ -37,6 +37,8 @@ class _DashboardState extends State<Dashboard> {
         if(snapshot.hasData){
           _usernamedata= snapshot.data.toString();
           return Scaffold(
+        // appBar: AppBar(actions: [IconButton(
+        //   onPressed: (){Navigator.of(context).pushNamed('/ar');}, icon: Icon(Icons.ac_unit))],),
         extendBodyBehindAppBar: true,
         body:DashboardBody(_usernamedata),
         backgroundColor: Colors.blue[300],
@@ -66,33 +68,14 @@ class DashboardBody extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(MediaQuery.of(context).size.height/25),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                child: Row(
-                  mainAxisAlignment:  MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                        children: [
-                         Text('Hello',style: TextStyle(color: Colors.grey[300],fontSize:10),),
-                          Text(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous",style: TextStyle(color:Colors.white,fontSize:30),),
-                       ],
-                      ),
-                    SizedBox(width: MediaQuery.of(context).size.width/2,),
-                    Icon(Icons.person_pin,color: Colors.white,size: 70,)
-                  ],
-                ),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height/7,
-              ),
-              SizedBox(height: 30,),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
+                  Center(
+                    child: FittedBox(
+                     child: Text("Halo  " +(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous"),style: TextStyle(color:Colors.white,fontSize:35),)),
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height/20,),
                   CustomCardWidget('Capaian Pembelajaran','Ketahui Tujuan Belajar'),
                   // SizedBox(height: MediaQuery.of(context).size.height/60,),
                   CustomCardWidget('Materi','Materi Ikatan Kimia'),
@@ -106,8 +89,6 @@ class DashboardBody extends StatelessWidget {
                   // CustomCardWidget('Settings'),
                   ],
                 ),
-            ],
-          ),
           ),
       ),
       // )

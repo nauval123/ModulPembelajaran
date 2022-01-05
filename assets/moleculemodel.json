@@ -4,12 +4,14 @@
       {
       "id":"1",
       "moleculename":"Carbon Dioksida",
-      "modelpath":"co2.glb"
+      "modelpath":"co2.glb",
+      "description":"A"
       },
       {
       "id":"2",
-      "moleculename":"Oksigen2",
-      "modelpath":"co2.glb"
+      "moleculename":"sf4",
+      "modelpath":"sf4/sf4.gltf",
+      "description":"B"
       }
     ]
 }

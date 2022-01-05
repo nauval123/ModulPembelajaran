@@ -22,6 +22,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     return;
   }
 
+  
+
   @override
   void initState() { 
      _controller = AnimationController(
@@ -66,7 +68,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         child:FadeTransition(
            opacity: _animation,
            child: Container(
+             width: MediaQuery.of(context).size.width,
+             height: MediaQuery.of(context).size.height,
              decoration: BoxDecoration(
+               image: DecorationImage(fit: BoxFit.fill,image: AssetImage('assets/Image/cover.png')),
                color: Colors.blue[800]),
                ),
           //  child: Image.asset(),
