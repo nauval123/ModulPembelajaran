@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/common/widgetcustom.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
-import 'package:modul_pembelajaran_kimia/pages/BabPage.dart';
-import 'package:modul_pembelajaran_kimia/pages/MateriPage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+// import 'package:modul_pembelajaran_kimia/pages/BabPage.dart';
+// import 'package:modul_pembelajaran_kimia/pages/MateriPage.dart';
 
-import 'QuizPage.dart';
+// import 'QuizPage.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -12,60 +12,41 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  late String usernamedata;
-  int _indexnavbar = 0;
-  late  var _halamannavbar = [
-    DashboardBody(),
-    Materi(),
-    Quiz(),
-    Bab(),
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-    // _getusernamedata();
-  }
+  late String _usernamedata;
+  // int _indexnavbar = 0;
+  // late  var _halamannavbar = [
+  //   DashboardBody(),
+  //   Materi(),
+  //   Quiz(),
+  //   Bab(),
+  // ];
 
 
-
-// void _getusernamedata() async {
-//   final SharedPreferences prefs = await SharedPreferences.getInstance();
-//   final String username = prefs.getString('username')??'';
-//     setState(() {
-//   //     _halamannavbar = [
-//   //   DashboardBody(username),
-//   //   Materi(),
-//   //   Quiz(),
-//   //   Bab(),
-//   // ];
-//     });
-// }
-
-// void _onTapNavbar(int index) {
-//     setState(() {
-//       _indexnavbar = index;
-//     });
-// }
+  Future<String> getUsername() async{
+     final SharedPreferences prefs = await SharedPreferences.getInstance();
+     final String nama = prefs.getString('username')??"Anonymous";
+     return nama;
+   }
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-      // appBar: AppBar(
-      //   leading: IconButton( onPressed:null, icon: Icon(Icons.list),),
-      // ),
-      backgroundColor: Colors.blueGrey[50],
-      body:_halamannavbar[_indexnavbar],
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _indexnavbar,
-      //   onTap: _onTapNavbar,
-      //   items: [
-      //   BottomNavigationBarItem(label: "Materi",icon: Icon(Icons.library_books_rounded)),
-      //   BottomNavigationBarItem(label: "Quiz",icon: Icon(Icons.question_answer)),
-      //   BottomNavigationBarItem(label: "Tentang",icon: Icon(Icons.quiz_rounded)),
-      //   ],
-      //   ),
-    );
+   return FutureBuilder(
+     future: getUsername(),
+     builder: (context , snapshot)
+      {
+        if(snapshot.hasData){
+          _usernamedata= snapshot.data.toString();
+          return Scaffold(
+        // appBar: AppBar(actions: [IconButton(
+        //   onPressed: (){Navigator.of(context).pushNamed('/ar');}, icon: Icon(Icons.ac_unit))],),
+        extendBodyBehindAppBar: true,
+        body:DashboardBody(_usernamedata),
+        backgroundColor: Colors.blue[300],
+      );}else{
+        return CircularProgressIndicator();
+      }
+    }
+   );
   }
 }
 
@@ -74,37 +55,40 @@ class _DashboardState extends State<Dashboard> {
 
 
 class DashboardBody extends StatelessWidget {
-  // final String usernamedata;
+  late final String _usernamedata;
  
-  // DashboardBody(
-  //   [this.usernamedata = 'anonymous']
-  // );
+  DashboardBody(
+    this._usernamedata,
+  );
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child:SingleChildScrollView(
         child: Container(
-          // height: MediaQuery.of(context).size.height,
-          // width:  MediaQuery.of(context).size.width,
-          padding: EdgeInsets.all(MediaQuery.of(context).size.height/20),
+          padding: EdgeInsets.all(MediaQuery.of(context).size.height/25),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomCardWidget('Capaian Pembelajaran'),
-              SizedBox(height: MediaQuery.of(context).size.height/15,),
-              CustomCardWidget('Materi'),
-              SizedBox(height: MediaQuery.of(context).size.height/15,),
-              CustomCardWidget('Quiz'),
-              SizedBox(height: MediaQuery.of(context).size.height/15,),
-              CustomCardWidget('3D Model Atom'),
-              SizedBox(height: MediaQuery.of(context).size.height/15,),
-              CustomCardWidget('Daftar Pustaka'),
-              SizedBox(height: MediaQuery.of(context).size.height/15,),
-              CustomCardWidget('Settings'),
-              ],
-            ),
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: FittedBox(
+                     child: Text("Halo  " +(this._usernamedata.isNotEmpty?this._usernamedata:"anonymous"),style: TextStyle(color:Colors.white,fontSize:35),)),
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height/20,),
+                  CustomCardWidget('Capaian Pembelajaran','Ketahui Tujuan Belajar'),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
+                  CustomCardWidget('Materi','Materi Ikatan Kimia'),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
+                  CustomCardWidget('Quiz','Uji Pengetahuanmu'),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
+                  CustomCardWidget('3D Model Atom','Bentuk Bentuk Atom?'),
+                  // SizedBox(height: MediaQuery.of(context).size.height/60,),
+                  // CustomCardWidget('Daftar Pustaka'),
+                  // SizedBox(height: MediaQuery.of(context).size.height/50,),
+                  // CustomCardWidget('Settings'),
+                  ],
+                ),
           ),
       ),
       // )
