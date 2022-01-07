@@ -39,6 +39,8 @@ class _ModelListState extends State<ModelList> {
     } else{ 
        var arstat =await ArCoreController.checkArCoreAvailability();
        var arinstalled = await ArCoreController.checkIsArCoreInstalled();
+      //    var arstat =false;
+      //  var arinstalled = false;
         prefs.setBool('arstatus',arstat);
         prefs.setBool('arcore',arinstalled);
         print("status ar nya adalah ?");
@@ -98,14 +100,9 @@ class _ModelListState extends State<ModelList> {
           child: TextField(
             decoration: InputDecoration(
               prefixIcon: Icon(Icons.search,color: Colors.white,),
-              // contentPadding: EdgeInsets.all(10),
               fillColor: Colors.blue[100],
               hintText: 'Cari Model Atom...',
               hintStyle: TextStyle(color: Colors.white),
-            //   focusedBorder:OutlineInputBorder(
-            //   borderSide: const BorderSide( width: 0.5),
-            //   borderRadius: BorderRadius.circular(15.0),
-            // ),
             ),
             onChanged: _filter,
           ),
@@ -116,7 +113,7 @@ class _ModelListState extends State<ModelList> {
   Widget _listmolecule(List<Molecule> listofmolecule,int index,bool arstatus){
      return InkWell(
                   onTap:(){arstatus==true && arcore==true?
-                  Navigator.of(context).pushNamed('/ar')
+                  Navigator.of(context).pushNamed('/ar',arguments: listofmolecule[index])
                   :Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);},
                   child: Card(
                     child: ListTile(

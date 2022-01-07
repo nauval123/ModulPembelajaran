@@ -4,12 +4,14 @@ class Molecule {
   late int id;
   late String moleculename;
   late String modelpath;
+  late String modelar;
   late String description;
 
   Molecule({
     required this.id,
     required this.moleculename,
     required this.modelpath,
+    required this.modelar,
     required this.description,}
   );
 
@@ -17,6 +19,7 @@ Molecule.fromjson(Map<String,dynamic> map){
     id =   int.parse(map["id"]) ;
     moleculename = map["moleculename"];
     modelpath = map["modelpath"] ;
+    modelar = map["modelar"];
     description = map["description"] ;
   }
 }

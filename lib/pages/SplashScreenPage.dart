@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       // print(username);
     username.isEmpty ?
            Navigator.pushReplacementNamed(context, '/InputName')
-          //  : Navigator.pushReplacementNamed(context, '/ar');
+          //  : Navigator.pushReplacementNamed(context, '/arflutter');
            : Navigator.pushReplacementNamed(context, '/Dashboard');
         });
     });
