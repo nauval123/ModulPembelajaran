@@ -3,14 +3,16 @@
     "3DMOLECULE":[
       {
       "id":"1",
-      "moleculename":"Carbon Dioksida",
-      "modelpath":"co2.glb",
+      "moleculename":"Berylium Hydrid",
+      "modelpath":"BeH2.glb",
+      "modelar":"BeH2.sfb",
       "description":"A"
       },
       {
       "id":"2",
       "moleculename":"sf4",
       "modelpath":"sf4/sf4.gltf",
+      "modelar":"sf4.sfb",
       "description":"B"
       }
     ]

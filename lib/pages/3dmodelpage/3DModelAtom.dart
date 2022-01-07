@@ -22,11 +22,7 @@ class ModelAtomPage extends StatelessWidget {
                   backgroundColor: Colors.teal[50],
                   src: 'assets/molecule/'+informationofmolecule.modelpath,
                   alt: informationofmolecule.moleculename,
-                  // autoPlay: false,
-                  // autoRotate: false,
                   cameraControls: true,
-                  // arModes: [],
-                  // ar: true,
               ),
               DraggableScrollableSheet(
                 initialChildSize: 0.1,
