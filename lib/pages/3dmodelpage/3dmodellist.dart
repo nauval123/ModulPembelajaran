@@ -112,13 +112,20 @@ class _ModelListState extends State<ModelList> {
 
   Widget _listmolecule(List<Molecule> listofmolecule,int index,bool arstatus){
      return InkWell(
-                  onTap:(){arstatus==true && arcore==true?
-                  Navigator.of(context).pushNamed('/ar',arguments: listofmolecule[index])
-                  :Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);},
+                  // onTap:(){arstatus==true && arcore==true?
+                  // Navigator.of(context).pushNamed('/ar',arguments: listofmolecule[index])
+                  // :Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);},
                   child: Card(
                     child: ListTile(
                       title: Text(listofmolecule[index].moleculename),
                       leading: Text(listofmolecule[index].id.toString()),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(onPressed: (){Navigator.of(context).pushNamed('/ar',arguments: listofmolecule[index]);}, icon: Icon(Icons.view_in_ar)),
+                          IconButton(onPressed: (){Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);}, icon: Icon(Icons.view_comfy_rounded)),
+                        ],
+                      ),
                     ),
                   ),
                 );
