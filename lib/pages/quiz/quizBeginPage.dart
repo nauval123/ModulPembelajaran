@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class QuizBegin extends StatelessWidget {
   const QuizBegin({ Key? key }) : super(key: key);
+  static const String _url = 'https://flutter.dev';
+  
+  void _launchURL() async {
+  if (!await launch(_url)) throw 'Could not launch $_url';
+}
 
   @override
   Widget build(BuildContext context) {
@@ -65,8 +71,10 @@ class QuizBegin extends StatelessWidget {
                           ),
                       ),
                       onTap: (){
-                        Navigator.of(context).pushReplacementNamed('/QuizStart');
+                        // Navigator.of(context).pushReplacementNamed('/QuizStart');
+                        _launchURL();
                       },
+                      
                     ),
                 ],
               ),
