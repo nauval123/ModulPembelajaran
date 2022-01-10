@@ -122,7 +122,7 @@ class _ModelListState extends State<ModelList> {
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          IconButton(onPressed: (){Navigator.of(context).pushNamed('/arflutter',arguments: listofmolecule[index]);}, icon: Icon(Icons.view_in_ar)),
+                          IconButton(onPressed: (){Navigator.of(context).pushNamed('/ar',arguments: listofmolecule[index]);}, icon: Icon(Icons.view_in_ar)),
                           IconButton(onPressed: (){Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);}, icon: Icon(Icons.view_comfy_rounded)),
                         ],
                       ),

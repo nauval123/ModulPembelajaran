@@ -40,7 +40,7 @@ dev_dependencies:
   model_viewer: ^0.8.1
   sqflite: any
   path_provider: any
-  # arcore_flutter_plugin: any
+  arcore_flutter_plugin: any
   ar_flutter_plugin: ^0.6.1
   # permission_handler: ^8.2.5
   provider: any
