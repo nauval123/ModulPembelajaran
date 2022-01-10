@@ -6,7 +6,7 @@ class Molecule {
   late String modelpath;
   late String modelar;
   late String description;
-  late String moderlarFlutter;
+  late String moderlarflutter;
 
   Molecule({
     required this.id,
@@ -14,7 +14,7 @@ class Molecule {
     required this.modelpath,
     required this.modelar,
     required this.description,
-    required this.moderlarFlutter,}
+    required this.moderlarflutter,}
   );
 
 Molecule.fromjson(Map<String,dynamic> map){
@@ -23,7 +23,7 @@ Molecule.fromjson(Map<String,dynamic> map){
     modelpath = map["modelpath"] ;
     modelar = map["modelar"];
     description = map["description"] ;
-    moderlarFlutter = map ["modelarflutter"];
+    moderlarflutter = map ["modelarflutter"];
   }
 }
 

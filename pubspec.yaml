@@ -63,8 +63,23 @@ flutter:
     - assets/Image/
     - assets/logo/
     - assets/logo/icons/
-    - assets/molecule/sf4/
-    - assets/molecule/
+    - assets/molecule/BeH2/
+    - assets/molecule/BF3/
+    - assets/molecule/BrF3/
+    - assets/molecule/BrF5/
+    - assets/molecule/CH4/
+    - assets/molecule/H2O/  
+    - assets/molecule/HF/
+    - assets/molecule/IF7/
+    - assets/molecule/NH3/
+    - assets/molecule/NO2/
+    - assets/molecule/PCl5/
+    - assets/molecule/SF4/
+    - assets/molecule/SF6/
+    - assets/molecule/XeF2/
+    - assets/molecule/XeF4/
+    - assets/molecule/glb/
+
     # - assets/fonts/VarelaRound-Regular.tff
   #   - images/a_dot_ham.jpeg
 
