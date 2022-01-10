@@ -1,13 +1,14 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:model_viewer/model_viewer.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
 
 class ModelAtomPage extends StatelessWidget {
-  const ModelAtomPage({Key? key}) : super(key: key);
+  const ModelAtomPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-  final informationofmolecule = ModalRoute.of(context)!.settings.arguments as Molecule;
+  final informationofmolecule = ModalRoute.of(context).settings.arguments as Molecule;
 
     return SafeArea(
         child: Scaffold(
@@ -18,12 +19,13 @@ class ModelAtomPage extends StatelessWidget {
             body: Stack(
               children: [
               ModelViewer(
-                  arScale: "auto",
+                  arScale: "fixed",
                   backgroundColor: Colors.teal[50],
-                  src: 'assets/molecule/'+informationofmolecule.modelpath,
+                  src: 'assets/molecule/glb/'+informationofmolecule.modelpath,
                   alt: informationofmolecule.moleculename,
                   cameraControls: true,
               ),
+              Spacer(),
               DraggableScrollableSheet(
                 initialChildSize: 0.1,
                 minChildSize: 0.1,
@@ -47,11 +49,11 @@ class ModelAtomPage extends StatelessWidget {
                               color: Colors.blue[300],
                               ),
                             ),
-                            Center(child: Text("Karbon DIoksida"),
+                            Center(child: Text(informationofmolecule.moleculename),
                             ),
                             Container(
                               padding: EdgeInsets.all(20),
-                              child: Text("Karbon dioksida adalah gas atmosfir yang terdiri dari dua atom Oksigen dan satu atom Karbon.Campuran kimia yang amat dikenal luas, sering disebut dengan rumus kimianya CO2. Karbon Dioksida adalah bagian dari atmosfir bumi, merupakan gas yang kita keluarkan pada saat bernafas dan digunakan oleh tanaman untuk proses fotosintesis. Karbon Dioksida juga adalah gas yang sama bentuk cairan maupun gas, dan juga dalam bentuk padatnya yang umumnya dikenal dengan nama dry ice (es kering).")
+                              child: Text(informationofmolecule.description)
                             ,)
                           ],
                         ),

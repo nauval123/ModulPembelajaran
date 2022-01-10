@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
+// import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 
 class ModelList extends StatefulWidget {
   @override
@@ -37,10 +37,10 @@ class _ModelListState extends State<ModelList> {
         arcore = arc;
       });
     } else{ 
-       var arstat =await ArCoreController.checkArCoreAvailability();
-       var arinstalled = await ArCoreController.checkIsArCoreInstalled();
-      //    var arstat =false;
-      //  var arinstalled = false;
+      //  var arstat =await ArCoreController.checkArCoreAvailability();
+      //  var arinstalled = await ArCoreController.checkIsArCoreInstalled();
+         var arstat =false;
+       var arinstalled = false;
         prefs.setBool('arstatus',arstat);
         prefs.setBool('arcore',arinstalled);
         print("status ar nya adalah ?");
@@ -122,7 +122,7 @@ class _ModelListState extends State<ModelList> {
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          IconButton(onPressed: (){Navigator.of(context).pushNamed('/ar',arguments: listofmolecule[index]);}, icon: Icon(Icons.view_in_ar)),
+                          IconButton(onPressed: (){Navigator.of(context).pushNamed('/arflutter',arguments: listofmolecule[index]);}, icon: Icon(Icons.view_in_ar)),
                           IconButton(onPressed: (){Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);}, icon: Icon(Icons.view_comfy_rounded)),
                         ],
                       ),
