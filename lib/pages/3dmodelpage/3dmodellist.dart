@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
+import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/ar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 
@@ -30,7 +31,7 @@ class _ModelListState extends State<ModelList> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     late bool ars = prefs.getBool('arstatus')??false;  
     late bool arc = prefs.getBool('arcore')??false;
-    print(ars);
+    // print(ars);
     if (ars == true || arc  == true){
       setState(() {
         arstatus = ars;
@@ -43,10 +44,10 @@ class _ModelListState extends State<ModelList> {
        var arinstalled = false;
         prefs.setBool('arstatus',arstat);
         prefs.setBool('arcore',arinstalled);
-        print("status ar nya adalah ?");
-        print(arstat);
-        print("arcore terinstall?");
-        print(arinstalled);
+        // print("status ar nya adalah ?");
+        // print(arstat);
+        // print("arcore terinstall?");
+        // print(arinstalled);
          setState(() {
            arstatus = arstat;
            arcore = arinstalled;
@@ -122,7 +123,7 @@ class _ModelListState extends State<ModelList> {
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          IconButton(onPressed: (){Navigator.of(context).pushNamed('/arflutter',arguments: listofmolecule[index]);}, icon: Icon(Icons.view_in_ar)),
+                          IconButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder:(context)=>LocalAndWebObjectsWidget(listofmolecule[index])));}, icon: Icon(Icons.view_in_ar)),
                           IconButton(onPressed: (){Navigator.of(context).pushNamed("/moleculemodel",arguments: listofmolecule[index]);}, icon: Icon(Icons.view_comfy_rounded)),
                         ],
                       ),
@@ -136,7 +137,7 @@ class _ModelListState extends State<ModelList> {
         if (word.isEmpty) {
           results = _list;
           setState(() {
-          print(results.toString());
+          // print(results.toString());
           _listofmolecule = results;
         });
 
@@ -146,7 +147,7 @@ class _ModelListState extends State<ModelList> {
                   mol.moleculename.toLowerCase().contains(word.toLowerCase()))
               .toList();
       setState(() {
-          print(results.toString());
+          // print(results.toString());
           _listofmolecule = results;
         });
         }
