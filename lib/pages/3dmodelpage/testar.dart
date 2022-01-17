@@ -27,7 +27,7 @@ class _ARPageState extends State<ARPage> {
 
   @override
   Widget build(BuildContext context) {
-     final informationofmolecule = ModalRoute.of(context).settings.arguments as Molecule;
+    final informationofmolecule = ModalRoute.of(context).settings.arguments as Molecule;
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
@@ -43,10 +43,14 @@ class _ARPageState extends State<ARPage> {
     );
   }
 
+
+  
+
   void _onArCoreViewCreated(ArCoreController controller) {
     
     arCoreController = controller;
     arCoreController.onPlaneTap=_onHandleTap;
+    // arCoreController.onPlaneDetected=;
     
   }
 
@@ -59,13 +63,16 @@ class _ARPageState extends State<ARPage> {
     final model = ArCoreReferenceNode(
       scale: vector.Vector3(0.15,0.15,0.15),
       object3DFileName: modelofmolecule.modelar,
-      position:  plane.pose.translation+vector.Vector3(0.0,1.0,0.0),
+      position:  plane.pose.translation+vector.Vector3(0.0,0.0,0.0),
       rotation: plane.pose.rotation,
-
       );
-      arCoreController.addArCoreNodeWithAnchor(model);
+      
+      arCoreController.addArCoreNodeWithAnchor(model,parentNodeName: "");
+      // arCoreController.addArCoreNode(model);
+      // arCoreController.onTrackingImage;
   }
 
+  
   
   @override
   void dispose() {
