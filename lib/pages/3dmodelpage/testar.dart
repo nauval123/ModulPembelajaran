@@ -49,29 +49,49 @@ class _ARPageState extends State<ARPage> {
   void _onArCoreViewCreated(ArCoreController controller) {
     
     arCoreController = controller;
-    arCoreController.onPlaneTap=_onHandleTap;
     // arCoreController.onPlaneDetected=;
+    // arCoreController.onPlaneTap=_onHandleTap;
+    // arCoreController.onPlaneDetected=;
+    _modelMolecule(arCoreController);
+    _addCube(arCoreController);
     
   }
 
-  void _onHandleTap(List<ArCoreHitTestResult> hits){
-    final hit = hits.first;
-    _modelMolecule(hit);
-  } 
+  // void _onHandleTap(List<ArCoreHitTestResult> hits){
+  //   final hit = hits.first;
+  //   _modelMolecule(hit);
+  // } 
 
-    void _modelMolecule (ArCoreHitTestResult plane){
+    void _modelMolecule (ArCoreController controller){
     final model = ArCoreReferenceNode(
-      scale: vector.Vector3(0.15,0.15,0.15),
+      scale: vector.Vector3(0.8,0.8,0.8),
       object3DFileName: modelofmolecule.modelar,
-      position:  plane.pose.translation+vector.Vector3(0.0,0.0,0.0),
-      rotation: plane.pose.rotation,
+      position: vector.Vector3(0.0, 0.0, -0.35),
+      rotation:vector.Vector4(0, 0, 0, 0),
+      // position:  plane.pose.translation+vector.Vector3(0.0,0.0,0.0),
+      // rotation: plane.pose.rotation,
       );
       
-      arCoreController.addArCoreNodeWithAnchor(model,parentNodeName: "");
+      controller.addArCoreNode(model);
       // arCoreController.addArCoreNode(model);
       // arCoreController.onTrackingImage;
   }
 
+    void _addCube(ArCoreController controller) {
+    final material = ArCoreMaterial(
+      color: Color.fromARGB(120, 66, 134, 244),
+      metallic: 1.0,
+    );
+    final cube = ArCoreCube(
+      materials: [material],
+      size: vector.Vector3(0.5, 0.5, 0.5),
+    );
+    final node = ArCoreNode(
+      shape: cube,
+      position: vector.Vector3(-0.5, 0.5, -3.5),
+    );
+    controller.addArCoreNode(node);
+  }
   
   
   @override
