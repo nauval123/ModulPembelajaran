@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/3dmodellist.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/3DModelAtom.dart';
-import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/ar.dart';
+// import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/ar.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/testar.dart';
+import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/trackkedar.dart';
 import 'package:modul_pembelajaran_kimia/pages/DashboardPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/InputNamePage.dart';
 import 'package:modul_pembelajaran_kimia/pages/quiz/QuizPage.dart';
@@ -43,7 +44,7 @@ class _MyAppState extends State<MyApp> {
         '/3D Model Atom':(context)=>ModelList(),
         '/moleculemodel':(context)=>ModelAtomPage(),
         '/ar':(context)=>ARPage(),
-        '/arflutter':(context)=>LocalAndWebObjectsWidget(),
+        '/arflutter':(context)=>ArMarker(),
       },
     );
   }

@@ -1,4 +1,6 @@
 // @dart=2.9
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:model_viewer/model_viewer.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
@@ -9,7 +11,7 @@ class ModelAtomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   final informationofmolecule = ModalRoute.of(context).settings.arguments as Molecule;
-
+  // File file = File('assets/molecule/glb/'+informationofmolecule.modelpath);
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
@@ -19,16 +21,18 @@ class ModelAtomPage extends StatelessWidget {
             body: Stack(
               children: [
               ModelViewer(
-                  arScale: "fixed",
+                  arScale: "auto",
                   backgroundColor: Colors.teal[50],
                   src: 'assets/molecule/glb/'+informationofmolecule.modelpath,
+                  // src: file.path,
                   alt: informationofmolecule.moleculename,
                   cameraControls: true,
+                  ar:true,
               ),
               Spacer(),
               DraggableScrollableSheet(
-                initialChildSize: 0.1,
-                minChildSize: 0.1,
+                initialChildSize: 0.05,
+                minChildSize: 0.05,
                 maxChildSize: 0.5,
                 builder:  (BuildContext context,ScrollController scrollController){
                     return Container(

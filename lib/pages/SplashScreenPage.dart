@@ -13,12 +13,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   checkusername() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String statuslogin = prefs.getString('username')??'';
-     var timer = const Duration(seconds: 1);
+    var timer = const Duration(seconds: 1);
         return Timer(timer, (){
-         statuslogin.isEmpty ?
-           Navigator.pushReplacementNamed(context, '/InputName')
-          //  : Navigator.pushReplacementNamed(context, '/arflutter');
-           : Navigator.pushReplacementNamed(context, '/Dashboard');
+        statuslogin.isEmpty ?
+          Navigator.pushReplacementNamed(context, '/InputName')
+          // : Navigator.pushReplacementNamed(context, '/arflutter');
+          : Navigator.pushReplacementNamed(context, '/Dashboard');
         });
     
   }
@@ -36,10 +36,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     return Scaffold(
       body:  Container(
-             width: MediaQuery.of(context).size.width,
-             height: MediaQuery.of(context).size.height,
-             decoration: BoxDecoration(
-               image: DecorationImage(fit: BoxFit.fill,image: AssetImage('assets/Image/cover.png')),),
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+          image: DecorationImage(fit: BoxFit.fill,image: AssetImage('assets/Image/cover.png')),),
         ),
     );
   }

@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.17
   geolocator_web: ^2.0.6
+  webview_flutter: ^0.3.24
   # ar_flutter_plugin: ^0.6.1
   
 
@@ -41,9 +42,9 @@ dev_dependencies:
   sqflite: any
   path_provider: any
   arcore_flutter_plugin: any
-  ar_flutter_plugin: ^0.6.1
+  # ar_flutter_plugin: ^0.6.1
   # permission_handler: ^8.2.5
-  provider: any
+  # provider: any/
   syncfusion_flutter_charts: ^19.4.40
 
 # For information on the generic Dart part of this file, see the
