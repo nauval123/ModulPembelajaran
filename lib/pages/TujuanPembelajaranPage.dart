@@ -19,7 +19,7 @@ class TujuanPembelajaranPage extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage(
-                    "assets/Tujuan Pembelajaran/TUJUANPEMBELAJARAN.png"),
+                    "assets/Tujuan Pembelajaran/Tujuan Pembelajaran.png"),
               ),
             ),
           ),
