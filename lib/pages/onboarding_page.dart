@@ -110,7 +110,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             height: MediaQuery.of(context).size.height / 15,
                             child: Center(
                               child: Text(
-                                "Selanjutnya",
+                                "Sebelumnya",
                                 style: TextStyle(
                                     fontFamily: "QuickSand",
                                     color: Colors.white,
