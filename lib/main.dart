@@ -7,12 +7,14 @@ import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/testar.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/trackkedar.dart';
 import 'package:modul_pembelajaran_kimia/pages/DashboardPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/InputNamePage.dart';
+import 'package:modul_pembelajaran_kimia/pages/MateriPage.dart';
+import 'package:modul_pembelajaran_kimia/pages/PetaKonsep.dart';
+import 'package:modul_pembelajaran_kimia/pages/TujuanPembelajaranPage.dart';
+import 'package:modul_pembelajaran_kimia/pages/onboarding_page.dart';
 import 'package:modul_pembelajaran_kimia/pages/quiz/QuizPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/SplashScreenPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/quiz/QuizBeginPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/quiz/QuizResultPage.dart';
-
-
 
 void main() {
   runApp(MyApp());
@@ -29,22 +31,25 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-      fontFamily: 'QuickSand'),
+      theme: ThemeData(fontFamily: 'QuickSand'),
       debugShowCheckedModeBanner: true,
       // theme: ThemeData(textTheme: textTheme),
       initialRoute: '/SplashScreen',
       routes: {
-        '/SplashScreen':(context)=>SplashScreen(),
-        '/Dashboard':(context)=>Dashboard(),
-        '/InputName':(context)=>InputName(),
-        '/Quiz':(context)=>QuizBegin(),
-        '/QuizStart':(context)=>Quiz(),
-        '/QuizResult':(context)=>QuizResult(),
-        '/3D Model Atom':(context)=>ModelList(),
-        '/moleculemodel':(context)=>ModelAtomPage(),
-        '/ar':(context)=>ARPage(),
-        '/arflutter':(context)=>ArMarker(),
+        '/SplashScreen': (context) => SplashScreen(),
+        '/onboarding': (context) => OnBoardingPage(),
+        '/Dashboard': (context) => Dashboard(),
+        '/InputName': (context) => InputName(),
+        '/Quiz': (context) => QuizBegin(),
+        '/QuizStart': (context) => Quiz(),
+        '/QuizResult': (context) => QuizResult(),
+        '/3D Model Atom': (context) => ModelList(),
+        '/moleculemodel': (context) => ModelAtomPage(),
+        '/ar': (context) => ARPage(),
+        '/arflutter': (context) => ArMarker(),
+        '/Tujuan Pembelajaran': (context) => TujuanPembelajaranPage(),
+        '/Materi': (context) => Materi(),
+        '/Peta Konsep': (context) => PetaKonsepPage(),
       },
     );
   }

@@ -39,8 +39,8 @@ class _ModelListState extends State<ModelList> {
     } else{ 
       //  var arstat =await ArCoreController.checkArCoreAvailability();
       //  var arinstalled = await ArCoreController.checkIsArCoreInstalled();
-         var arstat =false;
-       var arinstalled = false;
+        var arstat =false;
+        var arinstalled = false;
         prefs.setBool('arstatus',arstat);
         prefs.setBool('arcore',arinstalled);
         print("status ar nya adalah ?");
