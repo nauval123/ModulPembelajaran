@@ -5,6 +5,10 @@ class QuizBegin extends StatelessWidget {
   const QuizBegin({Key? key}) : super(key: key);
   static const String _url =
       'https://docs.google.com/forms/d/e/1FAIpQLSccoqpiQA0ZHHQkDTaHV7ZkhXvtg4S4JR3DI24zJs2N4IXBpw/viewform';
+  static const String _urlNilai =
+      "https://docs.google.com/spreadsheets/d/18IDsz5WKU1JeIlchiJ0troRyqZDPxKxsJxjerWzcrlk/edit?usp=sharing";
+  static const String _urlPembahasan =
+      "https://drive.google.com/file/d/15cWSPZQwR1hIqdDXlS5ZFXQoMuq7wGcr/view?usp=sharing";
 
   void _launchURL() async {
     try {
@@ -12,6 +16,24 @@ class QuizBegin extends StatelessWidget {
     } catch (e) {
       print(e);
       print('Could not launch $_url');
+    }
+  }
+
+  void _launchURLNilai() async {
+    try {
+      await launch(_urlNilai);
+    } catch (e) {
+      print(e);
+      print('Could not launch $_urlNilai');
+    }
+  }
+
+  void _launchURLPembahasan() async {
+    try {
+      await launch(_urlPembahasan);
+    } catch (e) {
+      print(e);
+      print('Could not launch $_urlPembahasan');
     }
   }
 
@@ -59,7 +81,7 @@ class QuizBegin extends StatelessWidget {
                   height: 25,
                 ),
                 Text(
-                  "Untuk Menguji Pemahanmu,Yuk Coba Uji Kompetensi! Ujian Ini Hanya Bisa Dilakukan Sekali Jadi Selesaikan Dengan Maksimal Ya!",
+                  "Berikut Untuk Pencekan Soal,Pembahasan Soal dan Pengecekan Nilai Murid.,Pengembang akan mengupdate nilai secara berkala setiap hari selasa \nCP: wa.me/6283800667565 (Admin Chempang)",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 15,
@@ -67,7 +89,7 @@ class QuizBegin extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 40,
                 ),
                 InkWell(
                   child: Container(
@@ -89,6 +111,56 @@ class QuizBegin extends StatelessWidget {
                   onTap: () async {
                     // Navigator.of(context).pushReplacementNamed('/QuizStart');
                     _launchURL();
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                        child: Text(
+                      "Pembahasan Soal",
+                      style: TextStyle(
+                          color: Colors.blue[300],
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                  onTap: () async {
+                    // Navigator.of(context).pushReplacementNamed('/QuizStart');
+                    _launchURLPembahasan();
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                        child: Text(
+                      "Cek Nilai Murid",
+                      style: TextStyle(
+                          color: Colors.blue[300],
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                  onTap: () async {
+                    // Navigator.of(context).pushReplacementNamed('/QuizStart');
+                    _launchURLNilai();
                   },
                 ),
               ],

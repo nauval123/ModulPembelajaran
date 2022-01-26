@@ -1,17 +1,14 @@
-// @dart=2.9
-// import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:model_viewer/model_viewer.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
 
 class ModelAtomPage extends StatelessWidget {
-  const ModelAtomPage({Key key}) : super(key: key);
+  const ModelAtomPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final informationofmolecule =
-        ModalRoute.of(context).settings.arguments as Molecule;
+        ModalRoute.of(context)!.settings.arguments as Molecule;
     // File file = File('assets/molecule/glb/'+informationofmolecule.modelpath);
     return SafeArea(
       child: Scaffold(

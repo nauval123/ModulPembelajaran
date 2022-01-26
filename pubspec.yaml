@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.17
   geolocator_web: ^2.0.6
-  webview_flutter: ^0.3.24
+  webview_flutter: ^0.3.0
   dots_indicator: ^2.0.0
   flutter_launcher_icons: "any"
   
@@ -46,8 +46,6 @@ dev_dependencies:
     sdk: flutter
   shared_preferences: any
   model_viewer: ^0.8.1
-  sqflite: any
-  path_provider: any
   arcore_flutter_plugin: any
   # ar_flutter_plugin: ^0.6.1
   # permission_handler: ^8.2.5

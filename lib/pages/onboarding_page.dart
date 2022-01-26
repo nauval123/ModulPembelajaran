@@ -73,7 +73,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: Image.asset(
-                          "assets/onboardingImage/fourth.jpeg",
+                          "assets/onboardingImage/fourth.jpg",
                           fit: BoxFit.fill,
                         )),
                   ],
