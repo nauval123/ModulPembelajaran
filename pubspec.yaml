@@ -32,6 +32,12 @@ dependencies:
   geolocator_web: ^2.0.6
   webview_flutter: ^0.3.24
   dots_indicator: ^2.0.0
+  flutter_launcher_icons: "any"
+  
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/chempang.png"
   # ar_flutter_plugin: ^0.6.1
   
 

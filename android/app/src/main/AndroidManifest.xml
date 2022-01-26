@@ -9,7 +9,7 @@
     <uses-feature android:name="android.hardware.camera.ar" />
   
    <application
-        android:label="modul_pembelajaran_kimia"
+        android:label="chempang"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
         <activity

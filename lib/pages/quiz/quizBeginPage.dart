@@ -3,10 +3,16 @@ import 'package:url_launcher/url_launcher.dart';
 
 class QuizBegin extends StatelessWidget {
   const QuizBegin({Key? key}) : super(key: key);
-  static const String _url = 'bit.ly/UKBentukMolekul';
+  static const String _url =
+      'https://docs.google.com/forms/d/e/1FAIpQLSccoqpiQA0ZHHQkDTaHV7ZkhXvtg4S4JR3DI24zJs2N4IXBpw/viewform';
 
   void _launchURL() async {
-    if (!await launch(_url)) throw 'Could not launch $_url';
+    try {
+      await launch(_url);
+    } catch (e) {
+      print(e);
+      print('Could not launch $_url');
+    }
   }
 
   @override
@@ -80,7 +86,8 @@ class QuizBegin extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     )),
                   ),
-                  onTap: () {
+                  onTap: () async {
+                    print("halo");
                     // Navigator.of(context).pushReplacementNamed('/QuizStart');
                     _launchURL();
                   },
