@@ -59,7 +59,15 @@ class QuizBegin extends StatelessWidget {
                   height: 25,
                 ),
                 Text(
-                  "Setelah kamu membaca materi yuk coba uji pengetahuanmu !",
+                  "Selamat Kalian Menyelesaikan Pembelajaran Mandiri Materi Bentuk Molekul !",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white54,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "Untuk Menguji Pemahanmu,Yuk Coba Uji Kompetensi! \nUjian Ini Hanya Bisa Dilakukan Sekali Jadi Selesaikan Dengan Maksimal Ya!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 15,
@@ -79,7 +87,7 @@ class QuizBegin extends StatelessWidget {
                     ),
                     child: Center(
                         child: Text(
-                      "mulai",
+                      "Mulai Uji Komptensi",
                       style: TextStyle(
                           color: Colors.blue[300],
                           fontSize: 20,
@@ -87,7 +95,6 @@ class QuizBegin extends StatelessWidget {
                     )),
                   ),
                   onTap: () async {
-                    print("halo");
                     // Navigator.of(context).pushReplacementNamed('/QuizStart');
                     _launchURL();
                   },
