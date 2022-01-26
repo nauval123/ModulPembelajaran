@@ -19,7 +19,7 @@
       },
       {
       "id":"3",
-      "moleculename":"Berylium Hydrid",
+      "moleculename":"Bromine trifluoride",
       "modelpath":"BrF3.glb",
       "modelar":"BrF3.sfb",
       "modelarflutter":"BrF3/BrF3.gltf",
@@ -27,7 +27,7 @@
       },
       {
         "id":"4",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Bromine pentafluoride",
         "modelpath":"BrF5.glb",
         "modelar":"BrF5.sfb",
         "modelarflutter":"BrF5/BrF5.gltf",
@@ -35,7 +35,7 @@
         },
       {
         "id":"5",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Methane",
         "modelpath":"CH4.glb",
         "modelar":"CH4.sfb",
         "modelarflutter":"CH4/CH4.gltf",
@@ -43,7 +43,7 @@
       },
       {
         "id":"6",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Oxygen Hydride",
         "modelpath":"H2O.glb",
         "modelar":"H2O.sfb",
         "modelarflutter":"H2O/H2O.gltf",
@@ -51,7 +51,7 @@
       },
       {
         "id":"7",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Hydrogen fluoride",
         "modelpath":"HF.glb",
         "modelar":"HF.sfb",
         "modelarflutter":"HF/HF.gltf",
@@ -59,7 +59,7 @@
       },
       {
         "id":"8",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Iodine heptafluoride",
         "modelpath":"IF7.glb",
         "modelar":"IF7.sfb",
         "modelarflutter":"IF7/IF7.gltf",
@@ -67,7 +67,7 @@
       },
       {
         "id":"9",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Ammonia",
         "modelpath":"NH3.glb",
         "modelar":"NH3.sfb",
         "modelarflutter":"NH3/NH3.gltf",
@@ -75,7 +75,7 @@
       },
       {
         "id":"10",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Nitrogen Dioxide",
         "modelpath":"NO2.glb",
         "modelar":"NO2.sfb",
         "modelarflutter":"NO2/NO2.gltf",
@@ -83,7 +83,7 @@
       },
       {
         "id":"11",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Phosphorus pentachloride",
         "modelpath":"PCl5.glb",
         "modelar":"PCl5.sfb",
         "modelarflutter":"PCl5/PCl5.gltf",
@@ -91,7 +91,7 @@
       },
       {
         "id":"12",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Sulfur tetrafluoride",
         "modelpath":"SF4.glb",
         "modelar":"SF4.sfb",
         "modelarflutter":"SF4/SF4.gltf",
@@ -99,7 +99,7 @@
       },
       {
         "id":"13",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Sulfur Hexafluoride",
         "modelpath":"SF6.glb",
         "modelar":"SF6.sfb",
         "modelarflutter":"SF6/SF6.gltf",
@@ -107,7 +107,7 @@
       },
       {
         "id":"14",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Xenon difluoride",
         "modelpath":"XeF2.glb",
         "modelar":"XeF2.sfb",
         "modelarflutter":"XeF2/XeF2.gltf",
@@ -115,7 +115,7 @@
       },
       {
         "id":"15",
-        "moleculename":"Berylium Hydrid",
+        "moleculename":"Xenon tetrafluoride",
         "modelpath":"XeF4.glb",
         "modelar":"XeF4.sfb",
         "modelarflutter":"XeF4/XeF4.gltf",

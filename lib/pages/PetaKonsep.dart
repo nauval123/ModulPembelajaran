@@ -13,13 +13,15 @@ class PetaKonsepPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage("assets/Peta Konsep/petakonsep.png"),
+        body: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage("assets/Peta Konsep/petakonsep.png"),
+              ),
             ),
           ),
         ),
