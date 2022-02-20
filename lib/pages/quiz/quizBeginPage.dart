@@ -65,7 +65,7 @@ class QuizBegin extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.fill,
-                          image: AssetImage("assets/logo/icons/Quiz.png"))),
+                          image: AssetImage("assets/logo/icons/QUIZ.png"))),
                 ),
                 SizedBox(
                   height: 30,
@@ -81,8 +81,15 @@ class QuizBegin extends StatelessWidget {
                   height: 25,
                 ),
                 Text(
-                  "Berikut Untuk Pencekan Soal,Pembahasan Soal dan Pengecekan Nilai Murid.,Pengembang akan mengupdate nilai secara berkala setiap hari selasa \nCP: wa.me/6283800667565 (Admin Chempang)",
+                  "Berikut untuk pengecekan soal,pembahasan soal dan pengecekan nilai murid.Pengembang akan mengupdate nilai secara berkala setiap hari selasa.",
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white54,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  " CP: wa.me/6283800667565 (Admin Chempang)",
                   style: TextStyle(
                       fontSize: 15,
                       color: Colors.white54,
