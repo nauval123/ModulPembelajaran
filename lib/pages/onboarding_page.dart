@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modul_pembelajaran_kimia/pages/InputNamePage.dart';
+import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/guide.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -177,7 +177,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute<void>(
-          builder: (BuildContext context) => InputName(),
+          builder: (BuildContext context) => GuidePage(),
         ),
       );
     }
