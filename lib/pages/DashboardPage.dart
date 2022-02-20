@@ -15,6 +15,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   late String _usernamedata;
   late AssetsAudioPlayer _assetsAudioPlayer = AssetsAudioPlayer();
+  bool _button = false;
 
   // int _indexnavbar = 0;
   // late  var _halamannavbar = [
@@ -57,10 +58,15 @@ class _DashboardState extends State<Dashboard> {
             return Scaffold(
               floatingActionButton: FloatingActionButton(
                 child: Center(
-                  child: Icon(Icons.play_arrow_outlined),
+                  child: _button == false
+                      ? Icon(Icons.play_arrow)
+                      : Icon(Icons.pause),
                 ),
                 onPressed: () {
                   _assetsAudioPlayer.playOrPause();
+                  setState(() {
+                    _button = !_button;
+                  });
                 },
               ),
               // appBar: AppBar(actions: [IconButton(
