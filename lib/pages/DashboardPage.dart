@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/common/widgetcustom.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,6 +14,8 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   late String _usernamedata;
+  late AssetsAudioPlayer _assetsAudioPlayer = AssetsAudioPlayer();
+
   // int _indexnavbar = 0;
   // late  var _halamannavbar = [
   //   DashboardBody(),
@@ -28,6 +31,23 @@ class _DashboardState extends State<Dashboard> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _assetsAudioPlayer.open(
+      Audio(
+        'assets/bgm.mp3',
+        metas: Metas(
+          id: 'Lo-fi',
+          title: 'BGM',
+          artist: 'Unknown',
+          album: 'Unknown',
+        ),
+      ),
+      loopMode: LoopMode.single,
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: getUsername(),
@@ -35,6 +55,14 @@ class _DashboardState extends State<Dashboard> {
           if (snapshot.hasData) {
             _usernamedata = snapshot.data.toString();
             return Scaffold(
+              floatingActionButton: FloatingActionButton(
+                child: Center(
+                  child: Icon(Icons.play_arrow_outlined),
+                ),
+                onPressed: () {
+                  _assetsAudioPlayer.playOrPause();
+                },
+              ),
               // appBar: AppBar(actions: [IconButton(
               //   onPressed: (){Navigator.of(context).pushNamed('/ar');}, icon: Icon(Icons.ac_unit))],),
               extendBodyBehindAppBar: true,
@@ -45,6 +73,12 @@ class _DashboardState extends State<Dashboard> {
             return CircularProgressIndicator();
           }
         });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _assetsAudioPlayer.dispose();
   }
 }
 
@@ -81,11 +115,12 @@ class DashboardBody extends StatelessWidget {
               CustomCardWidget('Tujuan Pembelajaran', 'Ketahui Tujuan Belajar'),
               CustomCardWidget('Peta Konsep', 'Yuk Lihat Konsepnya'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
-              CustomCardWidget('Materi', 'Materi Ikatan Kimia'),
+              CustomCardWidget('Materi', 'Mari Kita Membaca'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
-              CustomCardWidget('Quiz', 'Uji Pengetahuanmu'),
+              CustomCardWidget('QUIZ', 'Uji Pengetahuanmu'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
-              CustomCardWidget('3D Model Atom', 'Bentuk Bentuk Atom?'),
+              CustomCardWidget(
+                  'AR & Bentuk 3D molekul', 'lihat bentuk suatu molekul'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
               // CustomCardWidget('Daftar Pustaka'),
               // SizedBox(height: MediaQuery.of(context).size.height/50,),

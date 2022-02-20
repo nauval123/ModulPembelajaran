@@ -43,13 +43,13 @@ class QuizBegin extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.fill,
-                          image: AssetImage("assets/logo/icons/Quiz.png"))),
+                          image: AssetImage("assets/logo/icons/QUIZ.png"))),
                 ),
                 SizedBox(
                   height: 30,
                 ),
                 Text(
-                  "Quiz",
+                  "QUIZ",
                   style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
@@ -59,7 +59,7 @@ class QuizBegin extends StatelessWidget {
                   height: 25,
                 ),
                 Text(
-                  "Untuk Menguji Pemahanmu,Yuk Coba Uji Kompetensi! Ujian Ini Hanya Bisa Dilakukan Sekali Jadi Selesaikan Dengan Maksimal Ya!",
+                  "Untuk menguji pemahanmu,yuk Coba uji kompetensi! Ujian ini hanya bisa dilakukan sekali jadi selesaikan dengan maksimal ya!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 15,
