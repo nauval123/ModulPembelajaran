@@ -19,8 +19,7 @@ class _GuidePageState extends State<GuidePage> {
   void initState() {
     super.initState();
 
-    _controller = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4')
+    _controller = VideoPlayerController.asset('assets/guide.mp4')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
@@ -41,27 +40,31 @@ class _GuidePageState extends State<GuidePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _controller.value.isInitialized
-                ? AspectRatio(
-                    aspectRatio: _controller.value.aspectRatio,
-                    child: Stack(
-                      alignment: Alignment.bottomCenter,
-                      children: <Widget>[
-                        VideoPlayer(_controller),
-                        _ControlsOverlay(
-                          controller: _controller,
-                          onTap: () {
-                            setState(() {
-                              if (_controller.value.isPlaying) {
-                                _controller.pause();
-                              } else {
-                                _controller.play();
-                              }
-                            });
-                          },
-                        ),
-                        VideoProgressIndicator(_controller,
-                            allowScrubbing: true),
-                      ],
+                ? Container(
+                    padding: EdgeInsets.only(top: 20),
+                    height: MediaQuery.of(context).size.height / 2,
+                    child: AspectRatio(
+                      aspectRatio: 4 / 6,
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: <Widget>[
+                          VideoPlayer(_controller),
+                          _ControlsOverlay(
+                            controller: _controller,
+                            onTap: () {
+                              setState(() {
+                                if (_controller.value.isPlaying) {
+                                  _controller.pause();
+                                } else {
+                                  _controller.play();
+                                }
+                              });
+                            },
+                          ),
+                          VideoProgressIndicator(_controller,
+                              allowScrubbing: true),
+                        ],
+                      ),
                     ),
                   )
                 : Container(),
