@@ -34,15 +34,28 @@ class _GuidePageState extends State<GuidePage> {
     ]);
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(),
+      appBar:
+          AppBar(title: Text("Video Petunjuk"), centerTitle: true, actions: [
+        IconButton(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => InputName(),
+            ),
+          ),
+          icon: Icon(Icons.skip_next),
+        ),
+      ]),
       body: SizedBox(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _controller.value.isInitialized
                 ? Container(
-                    padding: EdgeInsets.only(top: 20),
-                    height: MediaQuery.of(context).size.height / 2,
+                    padding: EdgeInsets.all(10),
+                    height: MediaQuery.of(context).size.height * 0.75,
+                    width: MediaQuery.of(context).size.width,
                     child: AspectRatio(
                       aspectRatio: 4 / 6,
                       child: Stack(
@@ -68,56 +81,6 @@ class _GuidePageState extends State<GuidePage> {
                     ),
                   )
                 : Container(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 4,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 100,
-                  width: 250,
-                  // child: Center(
-                  //   child: CheckboxListTile(
-                  //       title: Text('Jangan Tampilkan Lagi'),
-                  //       controlAffinity: ListTileControlAffinity.leading,
-                  //       value: this.status,
-                  //       onChanged: (value) async {
-                  //         setState(() {
-                  //           status = !status;
-                  //         });
-                  //         print(status);
-                  //       }),
-                  // ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    // final SharedPreferences prefs =
-                    //     await SharedPreferences.getInstance();
-                    // prefs.setBool("guideStatus", status);
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => InputName()));
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.blue,
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Tutup",
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    height: MediaQuery.of(context).size.height / 20,
-                    width: MediaQuery.of(context).size.width / 4,
-                  ),
-                )
-              ],
-            )
           ],
         ),
       ),
