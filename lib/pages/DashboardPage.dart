@@ -35,17 +35,18 @@ class _DashboardState extends State<Dashboard> {
   void initState() {
     super.initState();
     _assetsAudioPlayer.open(
-      Audio(
-        'assets/bgm.mp3',
-        metas: Metas(
-          id: 'Lo-fi',
-          title: 'BGM',
-          artist: 'Unknown',
-          album: 'Unknown',
+        Audio(
+          'assets/bgm.mp3',
+          metas: Metas(
+            id: 'Alternative',
+            title: 'Bentuk Molekul',
+            artist: 'Chempang',
+            album: 'Chempang',
+          ),
         ),
-      ),
-      loopMode: LoopMode.single,
-    );
+        showNotification: true
+        // loopMode: LoopMode.single,
+        );
   }
 
   @override
@@ -127,6 +128,7 @@ class DashboardBody extends StatelessWidget {
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
               CustomCardWidget(
                   'AR & Bentuk 3D molekul', 'lihat bentuk suatu molekul'),
+              CustomCardWidget('Lirik', 'Nyanyikan dan pahami lagunya'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
               // CustomCardWidget('Daftar Pustaka'),
               // SizedBox(height: MediaQuery.of(context).size.height/50,),

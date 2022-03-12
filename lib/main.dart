@@ -7,6 +7,7 @@ import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/testar.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/trackkedar.dart';
 import 'package:modul_pembelajaran_kimia/pages/DashboardPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/InputNamePage.dart';
+import 'package:modul_pembelajaran_kimia/pages/LyricPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/MateriPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/PetaKonsep.dart';
 import 'package:modul_pembelajaran_kimia/pages/TujuanPembelajaranPage.dart';
@@ -50,6 +51,7 @@ class _MyAppState extends State<MyApp> {
         '/Tujuan Pembelajaran': (context) => TujuanPembelajaranPage(),
         '/Materi': (context) => Materi(),
         '/Peta Konsep': (context) => PetaKonsepPage(),
+        '/Lirik': (context) => LirikPage(),
       },
     );
   }
