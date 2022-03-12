@@ -1,125 +1,124 @@
-
 {
-    "3DMOLECULE":[
-      {
-      "id":"1",
-      "moleculename":"AX2 (Linear)",
-      "modelpath":"BeH2.glb",
-      "modelar":"BeH2.sfb",
-      "modelarflutter":"BeH2/BeH2.gltf",
-      "description":"A"
-      },
-      {
-      "id":"2",
-      "moleculename":"AX3 (Trigonal Planar)",
-      "modelpath":"BF3.glb",
-      "modelar":"BF3.sfb",
-      "modelarflutter":"BF3/BF3.gltf",
-      "description":"B"
-      },
-      {
-      "id":"3",
-      "moleculename":"AX3E2 (Huruf T Bengkok)",
-      "modelpath":"BrF3.glb",
-      "modelar":"BrF3.sfb",
-      "modelarflutter":"BrF3/BrF3.gltf",
-      "description":"A"
-      },
-      {
-        "id":"4",
-        "moleculename":"AX5E (Piramida Alas bujursangkar terdistorsi)",
-        "modelpath":"BrF5.glb",
-        "modelar":"BrF5.sfb",
-        "modelarflutter":"BrF5/BrF5.gltf",
-        "description":"A"
-        },
-      {
-        "id":"5",
-        "moleculename":"AX4 (Tetrahedral)",
-        "modelpath":"CH4.glb",
-        "modelar":"CH4.sfb",
-        "modelarflutter":"CH4/CH4.gltf",
-        "description":"A"
-      },
-      {
-        "id":"6",
-        "moleculename":"AX2E2 (Huruf V 109)",
-        "modelpath":"H2O.glb",
-        "modelar":"H2O.sfb",
-        "modelarflutter":"H2O/H2O.gltf",
-        "description":"A"
-      },
-      {
-        "id":"7",
-        "moleculename":"AXE3 (Linear)",
-        "modelpath":"HF.glb",
-        "modelar":"HF.sfb",
-        "modelarflutter":"HF/HF.gltf",
-        "description":"A"
-      },
-      {
-        "id":"8",
-        "moleculename":"AX7 (Pentagonal Bipiramidal)",
-        "modelpath":"IF7.glb",
-        "modelar":"IF7.sfb",
-        "modelarflutter":"IF7/IF7.gltf",
-        "description":"A"
-      },
-      {
-        "id":"9",
-        "moleculename":"AX3E (Trigonal Piramidal)",
-        "modelpath":"NH3.glb",
-        "modelar":"NH3.sfb",
-        "modelarflutter":"NH3/NH3.gltf",
-        "description":"A"
-      },
-      {
-        "id":"10",
-        "moleculename":"AX2E (Huruf V < 120)",
-        "modelpath":"NO2.glb",
-        "modelar":"NO2.sfb",
-        "modelarflutter":"NO2/NO2.gltf",
-        "description":"A"
-      },
-      {
-        "id":"11",
-        "moleculename":"AX5 (Trigonal Bipiramidal)",
-        "modelpath":"PCl5.glb",
-        "modelar":"PCl5.sfb",
-        "modelarflutter":"PCl5/PCl5.gltf",
-        "description":"A"
-      },
-      {
-        "id":"12",
-        "moleculename":"AX4E (Disfeneoidal)",
-        "modelpath":"SF4.glb",
-        "modelar":"SF4.sfb",
-        "modelarflutter":"SF4/SF4.gltf",
-        "description":"A"
-      },
-      {
-        "id":"13",
-        "moleculename":"AX6 (Oktahedral)",
-        "modelpath":"SF6.glb",
-        "modelar":"SF6.sfb",
-        "modelarflutter":"SF6/SF6.gltf",
-        "description":"A"
-      },
-      {
-        "id":"14",
-        "moleculename":"AX2E3 (Linear)",
-        "modelpath":"XeF2.glb",
-        "modelar":"XeF2.sfb",
-        "modelarflutter":"XeF2/XeF2.gltf",
-        "description":"A"
-      },
-      {
-        "id":"15",
-        "moleculename":"AX4E2 (Bujursangkar)",
-        "modelpath":"XeF4.glb",
-        "modelar":"XeF4.sfb",
-        "modelarflutter":"XeF4/XeF4.gltf",
-        "description":"A"
-      }
-    ]
+  "3DMOLECULE": [
+    {
+      "id": "1",
+      "moleculename": "AX2 (Linear)",
+      "modelpath": "BeCl2.glb",
+      "modelar": "BeCl2.sfb",
+      "modelarflutter": "BeCl2/BeCl2.gltf",
+      "description": "A"
+    },
+    {
+      "id": "2",
+      "moleculename": "AX3 (Trigonal Planar)",
+      "modelpath": "BF3.glb",
+      "modelar": "BF3.sfb",
+      "modelarflutter": "BF3/BF3.gltf",
+      "description": "B"
+    },
+    {
+      "id": "3",
+      "moleculename": "AX3E2 (Huruf T Bengkok)",
+      "modelpath": "BrF3.glb",
+      "modelar": "BrF3.sfb",
+      "modelarflutter": "BrF3/BrF3.gltf",
+      "description": "A"
+    },
+    {
+      "id": "4",
+      "moleculename": "AX5E (Piramida Alas bujursangkar terdistorsi)",
+      "modelpath": "BrF5.glb",
+      "modelar": "BrF5.sfb",
+      "modelarflutter": "BrF5/BrF5.gltf",
+      "description": "A"
+    },
+    {
+      "id": "5",
+      "moleculename": "AX4 (Tetrahedral)",
+      "modelpath": "CH4.glb",
+      "modelar": "CH4.sfb",
+      "modelarflutter": "CH4/CH4.gltf",
+      "description": "A"
+    },
+    {
+      "id": "6",
+      "moleculename": "AX2E2 (Huruf V 109)",
+      "modelpath": "H2O.glb",
+      "modelar": "H2O.sfb",
+      "modelarflutter": "H2O/H2O.gltf",
+      "description": "A"
+    },
+    {
+      "id": "7",
+      "moleculename": "AXE3 (Linear)",
+      "modelpath": "HF.glb",
+      "modelar": "HF.sfb",
+      "modelarflutter": "HF/HF.gltf",
+      "description": "A"
+    },
+    {
+      "id": "8",
+      "moleculename": "AX7 (Pentagonal Bipiramidal)",
+      "modelpath": "IF7.glb",
+      "modelar": "IF7.sfb",
+      "modelarflutter": "IF7/IF7.gltf",
+      "description": "A"
+    },
+    {
+      "id": "9",
+      "moleculename": "AX3E (Trigonal Piramidal)",
+      "modelpath": "NH3.glb",
+      "modelar": "NH3.sfb",
+      "modelarflutter": "NH3/NH3.gltf",
+      "description": "A"
+    },
+    {
+      "id": "10",
+      "moleculename": "AX2E (Huruf V < 120)",
+      "modelpath": "SO2.glb",
+      "modelar": "SO2.sfb",
+      "modelarflutter": "NO2/NO2.gltf",
+      "description": "A"
+    },
+    {
+      "id": "11",
+      "moleculename": "AX5 (Trigonal Bipiramidal)",
+      "modelpath": "PCl5.glb",
+      "modelar": "PCl5.sfb",
+      "modelarflutter": "PCl5/PCl5.gltf",
+      "description": "A"
+    },
+    {
+      "id": "12",
+      "moleculename": "AX4E (Disfeneoidal)",
+      "modelpath": "SF4.glb",
+      "modelar": "SF4.sfb",
+      "modelarflutter": "SF4/SF4.gltf",
+      "description": "A"
+    },
+    {
+      "id": "13",
+      "moleculename": "AX6 (Oktahedral)",
+      "modelpath": "SF6.glb",
+      "modelar": "SF6.sfb",
+      "modelarflutter": "SF6/SF6.gltf",
+      "description": "A"
+    },
+    {
+      "id": "14",
+      "moleculename": "AX2E3 (Linear)",
+      "modelpath": "XeF2.glb",
+      "modelar": "XeF2.sfb",
+      "modelarflutter": "XeF2/XeF2.gltf",
+      "description": "A"
+    },
+    {
+      "id": "15",
+      "moleculename": "AX4E2 (Bujursangkar)",
+      "modelpath": "XeF4.glb",
+      "modelar": "XeF4.sfb",
+      "modelarflutter": "XeF4/XeF4.gltf",
+      "description": "A"
+    }
+  ]
 }
