@@ -75,7 +75,7 @@ flutter:
     - assets/Image/
     - assets/logo/
     - assets/logo/icons/
-    - assets/molecule/BeH2/
+    - assets/molecule/BeCl2/
     - assets/molecule/BF3/
     - assets/molecule/BrF3/
     - assets/molecule/BrF5/
@@ -84,7 +84,7 @@ flutter:
     - assets/molecule/HF/
     - assets/molecule/IF7/
     - assets/molecule/NH3/
-    - assets/molecule/NO2/
+    - assets/molecule/SO2/
     - assets/molecule/PCl5/
     - assets/molecule/SF4/
     - assets/molecule/SF6/
