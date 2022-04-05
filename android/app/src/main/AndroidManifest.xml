@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.modul_pembelajaran_kimia">
     <!-- <uses-sdk android:minSdkVersion="24" /> -->
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- Indicates that app requires ARCore ("AR Required"). Ensures app is only
         visible in the Google Play Store on devices that support ARCore.
@@ -22,7 +22,7 @@
              <!-- Indicates that app requires ARCore ("AR Required"). Causes Google
                 Play Store to download and install ARCore when the app is installed.
             -->
-            <meta-data android:name="com.google.ar.core" android:value="optional" />
+            <meta-data android:name="com.google.ar.core" android:value="required" />
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
                  while the Flutter UI initializes. After that, this theme continues
