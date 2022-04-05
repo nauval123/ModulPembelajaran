@@ -59,14 +59,14 @@ class _DashboardState extends State<Dashboard> {
             return Scaffold(
               floatingActionButton: FloatingActionButton(
                 child: Center(
-                  child: _button == false
+                  child: _button == true
                       ? Icon(Icons.play_arrow)
                       : Icon(Icons.pause),
                 ),
                 onPressed: () {
                   _assetsAudioPlayer.playOrPause();
                   setState(() {
-                    _button = !_button;
+                    _button = _assetsAudioPlayer.isPlaying.value;
                   });
                 },
               ),

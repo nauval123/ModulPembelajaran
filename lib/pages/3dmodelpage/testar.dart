@@ -38,6 +38,8 @@ class _ARPageState extends State<ARPage> {
           body: ArCoreView(
             onArCoreViewCreated: _onArCoreViewCreated,
             enableTapRecognizer: true,
+            debug: true,
+            type: ArCoreViewType.STANDARDVIEW,
           ),
         ),
       ),
@@ -50,7 +52,7 @@ class _ARPageState extends State<ARPage> {
     // arCoreController.onPlaneTap=_onHandleTap;
     // arCoreController.onPlaneDetected=;
     _modelMolecule(arCoreController);
-    _addCube(arCoreController);
+    // _addCube(arCoreController);
   }
 
   // void _onHandleTap(List<ArCoreHitTestResult> hits){
@@ -73,21 +75,21 @@ class _ARPageState extends State<ARPage> {
     // arCoreController.onTrackingImage;
   }
 
-  void _addCube(ArCoreController controller) {
-    final material = ArCoreMaterial(
-      color: Color.fromARGB(120, 66, 134, 244),
-      metallic: 1.0,
-    );
-    final cube = ArCoreCube(
-      materials: [material],
-      size: vector.Vector3(0.5, 0.5, 0.5),
-    );
-    final node = ArCoreNode(
-      shape: cube,
-      position: vector.Vector3(-0.5, 0.5, -3.5),
-    );
-    controller.addArCoreNode(node);
-  }
+  // void _addCube(ArCoreController controller) {
+  //   final material = ArCoreMaterial(
+  //     color: Color.fromARGB(120, 66, 134, 244),
+  //     metallic: 1.0,
+  //   );
+  //   final cube = ArCoreCube(
+  //     materials: [material],
+  //     size: vector.Vector3(0.5, 0.5, 0.5),
+  //   );
+  //   final node = ArCoreNode(
+  //     shape: cube,
+  //     position: vector.Vector3(-0.5, 0.5, -3.5),
+  //   );
+  //   controller.addArCoreNode(node);
+  // }
 
   @override
   void dispose() {
