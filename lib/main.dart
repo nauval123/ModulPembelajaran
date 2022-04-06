@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/3dmodellist.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/3DModelAtom.dart';
+import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/ar.dart';
 // import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/ar.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/testar.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/trackkedar.dart';
@@ -46,7 +47,8 @@ class _MyAppState extends State<MyApp> {
         '/QuizResult': (context) => QuizResult(),
         '/AR & Bentuk 3D molekul': (context) => ModelList(),
         '/moleculemodel': (context) => ModelAtomPage(),
-        '/ar': (context) => ARPage(),
+        // '/ar': (context) => ARPage(),
+        '/ar': (context) => LocalAndWebObjectsWidget(),
         '/arflutter': (context) => ArMarker(),
         '/Tujuan Pembelajaran': (context) => TujuanPembelajaranPage(),
         '/Materi': (context) => Materi(),
