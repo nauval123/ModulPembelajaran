@@ -66,7 +66,7 @@ class _DashboardState extends State<Dashboard> {
                 onPressed: () {
                   _assetsAudioPlayer.playOrPause();
                   setState(() {
-                    _button = !_button;
+                    _button = _assetsAudioPlayer.isPlaying.value;
                   });
                 },
               ),

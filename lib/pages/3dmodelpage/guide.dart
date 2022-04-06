@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:modul_pembelajaran_kimia/pages/InputNamePage.dart';
 import 'package:video_player/video_player.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class GuidePage extends StatefulWidget {
   const GuidePage({Key? key}) : super(key: key);
