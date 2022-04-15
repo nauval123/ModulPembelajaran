@@ -35,18 +35,19 @@ class _DashboardState extends State<Dashboard> {
   void initState() {
     super.initState();
     _assetsAudioPlayer.open(
-        Audio(
-          'assets/bgm.mp3',
-          metas: Metas(
-            id: 'Alternative',
-            title: 'Bentuk Molekul',
-            artist: 'Chempang',
-            album: 'Chempang',
-          ),
+      Audio(
+        'assets/bgm.mp3',
+        metas: Metas(
+          id: 'Alternative',
+          title: 'Bentuk Molekul',
+          artist: 'Chempang',
+          album: 'Chempang',
         ),
-        showNotification: true
-        // loopMode: LoopMode.single,
-        );
+      ),
+      showNotification: true,
+      notificationSettings: NotificationSettings(stopEnabled: true),
+      // loopMode: LoopMode.single,
+    );
   }
 
   @override
@@ -85,6 +86,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   void dispose() {
     super.dispose();
+    _assetsAudioPlayer.showNotification = false;
     _assetsAudioPlayer.dispose();
   }
 }
