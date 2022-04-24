@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'QuickSand'),
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       // theme: ThemeData(textTheme: textTheme),
       initialRoute: '/SplashScreen',
       routes: {
