@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/3dmodellist.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/3DModelAtom.dart';
 import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/ar.dart';
-// import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/ar.dart';
-import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/testar.dart';
-import 'package:modul_pembelajaran_kimia/pages/3dmodelpage/trackkedar.dart';
 import 'package:modul_pembelajaran_kimia/pages/DashboardPage.dart';
 import 'package:modul_pembelajaran_kimia/pages/InputNamePage.dart';
 import 'package:modul_pembelajaran_kimia/pages/LyricPage.dart';
@@ -48,7 +45,7 @@ class _MyAppState extends State<MyApp> {
         '/moleculemodel': (context) => ModelAtomPage(),
         // '/ar': (context) => ARPage(),
         '/ar': (context) => LocalAndWebObjectsWidget(),
-        '/arflutter': (context) => ArMarker(),
+        // '/arflutter': (context) => ArMarker(),
         '/Tujuan Pembelajaran': (context) => TujuanPembelajaranPage(),
         '/Materi': (context) => Materi(),
         '/Peta Konsep': (context) => PetaKonsepPage(),
