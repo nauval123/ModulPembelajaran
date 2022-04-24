@@ -85,9 +85,9 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   void dispose() {
-    super.dispose();
     _assetsAudioPlayer.showNotification = false;
     _assetsAudioPlayer.dispose();
+    super.dispose();
   }
 }
 
