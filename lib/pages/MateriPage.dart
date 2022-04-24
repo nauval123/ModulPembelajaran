@@ -19,7 +19,7 @@ class _MateriState extends State<Materi> {
           // height: double.infinity,
           child: Scrollbar(
             child: PhotoViewGallery.builder(
-              itemCount: 27,
+              itemCount: 26,
               scrollDirection: Axis.vertical,
               scrollPhysics: const BouncingScrollPhysics(),
               builder: (context, index) {
