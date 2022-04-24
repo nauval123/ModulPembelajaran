@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 class Materi extends StatefulWidget {
   Materi({Key? key}) : super(key: key);
@@ -12,17 +14,22 @@ class _MateriState extends State<Materi> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: ListView.builder(
-            itemCount: 21,
-            itemBuilder: (context, index) {
-              return Image.asset(
-                "assets/Materi/" + (index + 1).toString() + ".png",
-                fit: BoxFit.fill,
-              );
-            },
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          // height: double.infinity,
+          child: Scrollbar(
+            child: PhotoViewGallery.builder(
+              itemCount: 27,
+              scrollDirection: Axis.vertical,
+              scrollPhysics: const BouncingScrollPhysics(),
+              builder: (context, index) {
+                return PhotoViewGalleryPageOptions(
+                  initialScale: PhotoViewComputedScale.contained * 0.9,
+                  imageProvider: AssetImage(
+                      "assets/Materi/" + (index).toString() + ".png"),
+                );
+              },
+            ),
           ),
         ),
       ),

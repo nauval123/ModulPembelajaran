@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 
 class PetaKonsepPage extends StatelessWidget {
   const PetaKonsepPage({Key? key}) : super(key: key);
@@ -13,17 +14,25 @@ class PetaKonsepPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: SingleChildScrollView(
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage("assets/Peta Konsep/petakonsep.png"),
-              ),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 0,
             ),
-          ),
+            Expanded(
+              // width: MediaQuery.of(context).size.width,
+              // height: MediaQuery.of(context).size.height,
+              child: PhotoView(
+                imageProvider: AssetImage("assets/Peta Konsep/petakonsep.png"),
+              ),
+              // decoration: BoxDecoration(
+              //   image: DecorationImage(
+              //     fit: BoxFit.fill,
+              //     image: AssetImage("assets/Peta Konsep/petakonsep.png"),
+              //   ),
+              // ),
+            ),
+          ],
         ),
       ),
     );
