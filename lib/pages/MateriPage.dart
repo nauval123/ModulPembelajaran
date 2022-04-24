@@ -19,14 +19,14 @@ class _MateriState extends State<Materi> {
           // height: double.infinity,
           child: Scrollbar(
             child: PhotoViewGallery.builder(
-              itemCount: 26,
+              itemCount: 27,
               scrollDirection: Axis.vertical,
               scrollPhysics: const BouncingScrollPhysics(),
               builder: (context, index) {
                 return PhotoViewGalleryPageOptions(
                   initialScale: PhotoViewComputedScale.contained * 0.9,
                   imageProvider: AssetImage(
-                      "assets/Materi/" + (index + 1).toString() + ".png"),
+                      "assets/Materi/" + (index).toString() + ".png"),
                 );
               },
             ),
