@@ -49,7 +49,7 @@ class QuizBegin extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  "QUIZ",
+                  "Kuis",
                   style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
