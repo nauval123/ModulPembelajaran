@@ -126,10 +126,10 @@ class DashboardBody extends StatelessWidget {
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
               CustomCardWidget('Materi', 'Mari Kita Membaca'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
-              CustomCardWidget('QUIZ', 'Uji Pengetahuanmu'),
+              CustomCardWidget('Kuis', 'Uji Pengetahuanmu'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
               CustomCardWidget(
-                  'AR & Bentuk 3D molekul', 'lihat bentuk suatu molekul'),
+                  'AR & Bentuk 3D molekul', 'Lihat bentuk suatu molekul'),
               CustomCardWidget('Lirik', 'Nyanyikan dan pahami lagunya'),
               // SizedBox(height: MediaQuery.of(context).size.height/60,),
               // CustomCardWidget('Daftar Pustaka'),
