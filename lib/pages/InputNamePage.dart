@@ -96,13 +96,13 @@ class _InputNameState extends State<InputName> {
                                         : MediaQuery.of(context).size.height /
                                             6,
                                     child: TextFormField(
-                                      validator: (value) {
-                                        if (value!.isEmpty ||
-                                            value.trim().length == 0) {
-                                          return "Nama Tidak Boleh Kosong";
-                                        }
-                                        return null;
-                                      },
+                                      // validator: (value) {
+                                      //   if (value!.isEmpty ||
+                                      //       value.trim().length == 0) {
+                                      //     return "Nama Tidak Boleh Kosong";
+                                      //   }
+                                      //   return null;
+                                      // },
                                       controller: usernameController,
                                       style: TextStyle(
                                         color: Colors.black54,

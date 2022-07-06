@@ -38,6 +38,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -53,29 +54,29 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   controller: pageController,
                   children: [
                     SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
+                        // width: MediaQuery.of(context).size.width * 0.5,
                         child: Image.asset(
-                          "assets/onboardingImage/first.jpg",
-                          fit: BoxFit.fill,
-                        )),
+                      "assets/onboardingImage/first.jpg",
+                      fit: BoxFit.fill,
+                    )),
                     SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
+                        // width: MediaQuery.of(context).size.width * 0.5,
                         child: Image.asset(
-                          "assets/onboardingImage/second.jpg",
-                          fit: BoxFit.fill,
-                        )),
+                      "assets/onboardingImage/second.jpg",
+                      fit: BoxFit.fill,
+                    )),
                     SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
+                        // width: MediaQuery.of(context).size.width * 0.5,
                         child: Image.asset(
-                          "assets/onboardingImage/third.jpg",
-                          fit: BoxFit.fill,
-                        )),
+                      "assets/onboardingImage/third.jpg",
+                      fit: BoxFit.fill,
+                    )),
                     SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
+                        // width: MediaQuery.of(context).size.width * 0.5,
                         child: Image.asset(
-                          "assets/onboardingImage/fourth.jpg",
-                          fit: BoxFit.fill,
-                        )),
+                      "assets/onboardingImage/fourth.jpg",
+                      fit: BoxFit.fill,
+                    )),
                   ],
                 ),
               ),
