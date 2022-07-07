@@ -26,6 +26,13 @@ class _GuidePageState extends State<GuidePage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _controller.pause();
+    _controller.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -36,12 +43,15 @@ class _GuidePageState extends State<GuidePage> {
       appBar:
           AppBar(title: Text("Video Petunjuk"), centerTitle: true, actions: [
         IconButton(
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => InputName(),
-            ),
-          ),
+          onPressed: () {
+            _controller.pause();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => InputName(),
+              ),
+            );
+          },
           icon: Icon(Icons.skip_next),
         ),
       ]),
@@ -51,35 +61,40 @@ class _GuidePageState extends State<GuidePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _controller.value.isInitialized
-                ? Container(
-                    padding: EdgeInsets.all(10),
-                    height: MediaQuery.of(context).size.height * 0.75,
-                    width: MediaQuery.of(context).size.width,
-                    child: AspectRatio(
-                      aspectRatio: 4 / 6,
-                      child: Stack(
-                        alignment: Alignment.bottomCenter,
-                        children: <Widget>[
-                          VideoPlayer(_controller),
-                          _ControlsOverlay(
-                            controller: _controller,
-                            onTap: () {
-                              setState(() {
-                                if (_controller.value.isPlaying) {
-                                  _controller.pause();
-                                } else {
-                                  _controller.play();
-                                }
-                              });
-                            },
-                          ),
-                          VideoProgressIndicator(_controller,
-                              allowScrubbing: true),
-                        ],
+                ? Expanded(
+                    child: Container(
+                      padding: EdgeInsets.only(
+                          bottom: 24, top: 16, left: 16, right: 16),
+                      // height: MediaQuery.of(context).size.height,
+                      // width: MediaQuery.of(context).size.width,
+                      child: AspectRatio(
+                        aspectRatio: 4 / 6,
+                        child: Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: <Widget>[
+                            VideoPlayer(_controller),
+                            _ControlsOverlay(
+                              controller: _controller,
+                              onTap: () {
+                                setState(() {
+                                  if (_controller.value.isPlaying) {
+                                    _controller.pause();
+                                  } else {
+                                    _controller.play();
+                                  }
+                                });
+                              },
+                            ),
+                            VideoProgressIndicator(_controller,
+                                allowScrubbing: true),
+                          ],
+                        ),
                       ),
                     ),
                   )
-                : Container(),
+                : Center(
+                    child: CircularProgressIndicator(),
+                  ),
           ],
         ),
       ),

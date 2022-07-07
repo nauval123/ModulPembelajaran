@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         '/onboarding': (context) => OnBoardingPage(),
         '/Dashboard': (context) => Dashboard(),
         '/InputName': (context) => InputName(),
-        '/QUIZ': (context) => QuizBegin(),
+        '/Kuis': (context) => QuizBegin(),
         '/QuizStart': (context) => Quiz(),
         '/QuizResult': (context) => QuizResult(),
         '/AR & Bentuk 3D molekul': (context) => ModelList(),

@@ -73,7 +73,7 @@ class _ModelListState extends State<ModelList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Model Molekul'),
+        title: Text('Bentuk Molekul'),
         centerTitle: true,
       ),
       body: FutureBuilder(
@@ -111,7 +111,7 @@ class _ModelListState extends State<ModelList> {
               color: Colors.white,
             ),
             fillColor: Colors.blue[100],
-            hintText: 'Cari Model Atom...',
+            hintText: 'Cari Bentuk Molekul',
             hintStyle: TextStyle(color: Colors.white),
           ),
           onChanged: _filter,
