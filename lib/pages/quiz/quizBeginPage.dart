@@ -43,7 +43,7 @@ class QuizBegin extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.fill,
-                          image: AssetImage("assets/logo/icons/QUIZ.png"))),
+                          image: AssetImage("assets/logo/icons/Kuis.png"))),
                 ),
                 SizedBox(
                   height: 30,
