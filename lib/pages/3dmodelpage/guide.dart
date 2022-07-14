@@ -86,6 +86,12 @@ class _GuidePageState extends State<GuidePage> {
                               },
                             ),
                             VideoProgressIndicator(_controller,
+                                padding: EdgeInsets.all(20),
+                                colors: VideoProgressColors(
+                                  backgroundColor: Colors.grey.shade300,
+                                  bufferedColor: Colors.grey.shade400,
+                                  playedColor: Colors.red,
+                                ),
                                 allowScrubbing: true),
                           ],
                         ),
