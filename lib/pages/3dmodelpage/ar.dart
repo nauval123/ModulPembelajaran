@@ -14,6 +14,7 @@ import 'package:ar_flutter_plugin/datatypes/config_planedetection.dart';
 // import 'package:ar_flutter_plugin/datatypes/node_types.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 // import 'package:flutter/services.dart';
 import 'package:vector_math/vector_math_64.dart';
 // import 'dart:math';
@@ -70,33 +71,39 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
         appBar: AppBar(
           title: Text(molecule?.moleculename ?? "Model 3D atom"),
         ),
-        body: Container(
-            child: notification == false
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : Stack(children: [
-                    ARView(
-                      onARViewCreated: onARViewCreated,
-                      planeDetectionConfig:
-                          PlaneDetectionConfig.horizontalAndVertical,
-                    ),
-                    Align(
-                        alignment: FractionalOffset.bottomCenter,
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  // ElevatedButton(
-                                  //     onPressed: onLocalObjectAtOriginButtonPressed,
-                                  //     child: Text("Add/Remove Local\nObject at Origin")),
-                                ],
-                              ),
-                            ]))
-                  ])));
+        body: SlidingUpPanel(
+          collapsed: Container(
+              child: Center(
+            child: Text(molecule!.moleculename),
+          )),
+          body: Container(
+              child: notification == false
+                  ? Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : Stack(children: [
+                      ARView(
+                        onARViewCreated: onARViewCreated,
+                        planeDetectionConfig:
+                            PlaneDetectionConfig.horizontalAndVertical,
+                      ),
+                      Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    // ElevatedButton(
+                                    //     onPressed: onLocalObjectAtOriginButtonPressed,
+                                    //     child: Text("Add/Remove Local\nObject at Origin")),
+                                  ],
+                                ),
+                              ]))
+                    ])),
+        ));
   }
 
   void onARViewCreated(
