@@ -14,8 +14,9 @@ import 'package:ar_flutter_plugin/datatypes/config_planedetection.dart';
 // import 'package:ar_flutter_plugin/datatypes/node_types.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
 import 'package:modul_pembelajaran_kimia/model/Molecule.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 // import 'package:flutter/services.dart';
-import 'package:vector_math/vector_math_64.dart';
+import 'package:vector_math/vector_math_64.dart' as vector;
 // import 'dart:math';
 // import 'package:path_provider/path_provider.dart';
 // import 'package:flutter_archive/flutter_archive.dart';
@@ -44,18 +45,17 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
 
   @override
   void initState() {
-    super.initState();
     Future.delayed(Duration.zero, () {
       setState(() {
         molecule = ModalRoute.of(context)!.settings.arguments as Molecule;
       });
-      print(molecule?.moderlarflutter);
     });
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration.zero, () {
       setState(() {
         notification = true;
       });
     });
+    super.initState();
   }
 
   @override
@@ -66,37 +66,91 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    molecule = ModalRoute.of(context)!.settings.arguments as Molecule;
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text(molecule?.moleculename ?? "Model 3D atom"),
         ),
-        body: Container(
-            child: notification == false
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : Stack(children: [
-                    ARView(
-                      onARViewCreated: onARViewCreated,
-                      planeDetectionConfig:
-                          PlaneDetectionConfig.horizontalAndVertical,
+        body: SlidingUpPanel(
+          minHeight: MediaQuery.of(context).size.height * 0.1,
+          maxHeight: MediaQuery.of(context).size.height * 0.35,
+          renderPanelSheet: false,
+          collapsed: Container(
+              padding: EdgeInsets.only(top: 4),
+              color: Colors.blue.shade400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.keyboard_arrow_up_sharp,
+                    color: Colors.white,
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Informasi Molekul",
+                      style: TextStyle(color: Colors.white),
                     ),
-                    Align(
-                        alignment: FractionalOffset.bottomCenter,
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  // ElevatedButton(
-                                  //     onPressed: onLocalObjectAtOriginButtonPressed,
-                                  //     child: Text("Add/Remove Local\nObject at Origin")),
-                                ],
-                              ),
-                            ]))
-                  ])));
+                  ),
+                ],
+              )),
+          panel: Container(
+            padding: EdgeInsets.fromLTRB(20, 24, 20, 20),
+            color: Colors.blue.shade300,
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Nama", style: TextStyle(color: Colors.grey.shade300)),
+                    Text(molecule!.moleculename,
+                        style: TextStyle(color: Colors.white)),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text("Nama IUPAC",
+                        style: TextStyle(color: Colors.grey.shade300)),
+                    Text(molecule!.fullnameMol,
+                        style: TextStyle(color: Colors.white)),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text("Deskripsi",
+                        style: TextStyle(color: Colors.grey.shade300)),
+                    Text(molecule!.description,
+                        style: TextStyle(color: Colors.white)),
+                  ]),
+            ),
+          ),
+          body: Container(
+              child: notification == false
+                  ? Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : Stack(children: [
+                      ARView(
+                        onARViewCreated: onARViewCreated,
+                        planeDetectionConfig:
+                            PlaneDetectionConfig.horizontalAndVertical,
+                      ),
+                      Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    // ElevatedButton(
+                                    //     onPressed: onLocalObjectAtOriginButtonPressed,
+                                    //     child: Text("Add/Remove Local\nObject at Origin")),
+                                  ],
+                                ),
+                              ]))
+                    ])),
+        ));
   }
 
   void onARViewCreated(
@@ -122,9 +176,9 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
     this.arObjectManager!.addNode(ARNode(
         type: NodeType.localGLTF2,
         uri: file.path,
-        scale: Vector3(0.25, 0.25, 0.25),
-        position: Vector3(0.0, -0.1, -0.2),
-        rotation: Vector4(1.0, 0.0, 0.0, 0.0)));
+        scale: vector.Vector3(0.25, 0.25, 0.25),
+        position: vector.Vector3(0.0, -0.1, -0.2),
+        rotation: vector.Vector4(1.0, 0.0, 0.0, 0.0)));
   }
 
 //ini
@@ -139,9 +193,9 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
       var newNode = ARNode(
           type: NodeType.localGLTF2,
           uri: file.path,
-          scale: Vector3(0.25, 0.25, 0.25),
-          position: Vector3(0.0, -0.1, -0.2),
-          rotation: Vector4(1.0, 0.0, 0.0, 0.0));
+          scale: vector.Vector3(0.25, 0.25, 0.25),
+          position: vector.Vector3(0.0, -0.1, -0.2),
+          rotation: vector.Vector4(1.0, 0.0, 0.0, 0.0));
       // bool? didAddLocalNode = await this.arObjectManager!.addNode(newNode);
       this.localObjectNode = newNode;
     }
