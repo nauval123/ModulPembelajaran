@@ -6,7 +6,11 @@
       "modelpath": "BeCl2.glb",
       "modelar": "BeCl2.sfb",
       "modelarflutter": "BeCl2/BeCl2.gltf",
-      "description": "A"
+      "nameFormula": "AX2",
+      "shapeFormula": "Linear",
+      "nameMol": "BeCl2",
+      "fullnameMol": "Berilium klorida",
+      "description": "Senyawa anorganik dengan rumus BeCl2. Senyawa ini merupakan senyawa padat yang higroskopik, tidak berwarna dan dapat dengan mudah larut. Sifat-sifatnya mirip dengan aluminium klorida karena berilium memiliki hubungan diagonal dengan aluminium."
     },
     {
       "id": "2",
@@ -14,7 +18,11 @@
       "modelpath": "BF3.glb",
       "modelar": "BF3.sfb",
       "modelarflutter": "BF3/BF3.gltf",
-      "description": "B"
+      "nameFormula": "AX3",
+      "shapeFormula": "Trigonal Planar",
+      "nameMol": "BF3",
+      "fullnameMol": "Boron trifluorida",
+      "description": "senyawa anorganik dengan rumus kimia BF3. Gas toksik tak berwarna yang berbau menyengat ini membentuk asap putih dalam kelembaban udara. Senyawa ini merupakan asam Lewis yang sangat berguna dan blok pembangun yang penting bagi senyawa boron lainnya."
     },
     {
       "id": "3",
@@ -22,7 +30,11 @@
       "modelpath": "BrF3.glb",
       "modelar": "BrF3.sfb",
       "modelarflutter": "BrF3/BrF3.gltf",
-      "description": "A"
+      "nameFormula": "AX3E2",
+      "shapeFormula": "Huruf T Bengkok",
+      "nameMol": "BrF3",
+      "fullnameMol": "Bromin trifluorida",
+      "description": "senyawa interhalogen dengan formula BrF3.Senyawa ini adalah cairan berwarna jerami dengan bau yang menyengat yang larut dalam asam sulfat namun meledak pada kontak dengan senyawa air dan organik.BrF3 digunakan untuk memproduksi uranium heksafluorida (UF6) dalam pengolahan kembali bahan bakar nuklir."
     },
     {
       "id": "4",
@@ -30,7 +42,11 @@
       "modelpath": "BrF5.glb",
       "modelar": "BrF5.sfb",
       "modelarflutter": "BrF5/BrF5.gltf",
-      "description": "A"
+      "nameFormula": "AX5E",
+      "shapeFormula": "Piramida Alas bujursangkar terdistorsi",
+      "nameMol": "BrF5",
+      "fullnameMol": "Bromin pentafluorida",
+      "description": "senyawa interhalogen dan fluorida brom. Ini adalah pereaksi fluorinasi yang kuat. BrF₅ ditemukan digunakan dalam analisis isotop oksigen."
     },
     {
       "id": "5",
@@ -38,15 +54,23 @@
       "modelpath": "CH4.glb",
       "modelar": "CH4.sfb",
       "modelarflutter": "CH4/CH4.gltf",
-      "description": "A"
+      "nameFormula": "AX4",
+      "shapeFormula": "Tetrahedral",
+      "nameMol": "CH4",
+      "fullnameMol": "Metana",
+      "description": "senyawa hidrokarbon paling sederhana yang berbentuk gas dengan rumus kimia CH4. Metana murni tidak berbau, tetapi jika digunakan untuk keperluan komersial, biasanya ditambahkan sedikit bau belerang untuk mendeteksi kebocoran yang mungkin terjadi."
     },
     {
       "id": "6",
-      "moleculename": "AX2E2 (Huruf V 109)",
+      "moleculename": "AX2E2 (Huruf V 109°)",
       "modelpath": "H2O.glb",
       "modelar": "H2O.sfb",
       "modelarflutter": "H2O/H2O.gltf",
-      "description": "A"
+      "nameFormula": "AX2E2",
+      "shapeFormula": "Huruf V  109°",
+      "nameMol": "H2O",
+      "fullnameMol": "Hidrogen Hidroksida",
+      "description": "senyawa substansi kimia dengan rumus kimia satu molekul air tersusun atas dua atom hidrogen yang terikat secara kovalen pada satu atom oksigen. Air bersifat tidak berwarna, tidak berasa dan tidak berbau pada kondisi standar, yaitu pada tekanan 100 kPa (1 bar) and temperatur 273,15 K (0 °C). Zat kimia ini merupakan suatu pelarut yang penting, yang memiliki kemampuan untuk melarutkan banyak zat kimia lainnya, seperti garam-garam, gula, asam, beberapa jenis gas dan banyak macam molekul organik."
     },
     {
       "id": "7",
@@ -54,7 +78,11 @@
       "modelpath": "HF.glb",
       "modelar": "HF.sfb",
       "modelarflutter": "HF/HF.gltf",
-      "description": "A"
+      "nameFormula": "AXE3",
+      "shapeFormula": "Linear",
+      "nameMol": "HF",
+      "fullnameMol": "Hidrogen fluorida",
+      "description": " senyawa kimia dengan rumus kimia HF. Senyawa ini merupakan gas atau cairan tidak berwarna dan merupakan sumber utama dari industri fluor, biasanya sebagai larutan encer yang disebut asam fluorida. Maka senyawa ini adalah prekursor banyak senyawa penting seperti obat-obatan dan polimer (misalnya Teflon). HF digunakan secara luas dalam industri petrokimia sebagai komponen superasam. Hidrogen fluorida menguap pada suhu kamar, jauh lebih tinggi dibandingkan hidrogen halida lainnya. Tidak seperti hidrogen halida lain, HF lebih ringan dari udara."
     },
     {
       "id": "8",
@@ -62,7 +90,11 @@
       "modelpath": "IF7.glb",
       "modelar": "IF7.sfb",
       "modelarflutter": "IF7/IF7.gltf",
-      "description": "A"
+      "nameFormula": "AX7",
+      "shapeFormula": "Pentagonal Bipiramidal",
+      "nameMol": "IF7",
+      "fullnameMol": "Iodin heptaflourida",
+      "description": "senyawa interhalogin  dengan rumus kimia IF7.Senyawa ini berbentuk kristal tak bewarna yang memiliki titik leleh 4.5°C dengan titik didih 4.77°C."
     },
     {
       "id": "9",
@@ -70,15 +102,23 @@
       "modelpath": "NH3.glb",
       "modelar": "NH3.sfb",
       "modelarflutter": "NH3/NH3.gltf",
-      "description": "A"
+      "nameFormula": "AX3E",
+      "shapeFormula": "Trigonal Piramidal",
+      "nameMol": "NH3",
+      "fullnameMol": "Hidrogen Nitrida",
+      "description": "senyawa kimia dengan rumus NH3. Biasanya senyawa ini didapati berupa gas dengan bau tajam yang khas (disebut bau amonia). Walaupun amonia memiliki sumbangan penting bagi keberadaan nutrisi di bumi, amonia sendiri adalah senyawa kaustik dan dapat merusak kesehatan."
     },
     {
       "id": "10",
-      "moleculename": "AX2E (Huruf V < 120)",
+      "moleculename": "AX2E (Huruf V < 120°)",
       "modelpath": "SO2.glb",
       "modelar": "SO2.sfb",
       "modelarflutter": "SO2/SO2.gltf",
-      "description": "A"
+      "nameFormula": "AX2E",
+      "shapeFormula": "Huruf V < 120°",
+      "nameMol": "SO2",
+      "fullnameMol": "Belerang dioksida",
+      "description": "Senyawa ini merupakan gas beracun dengan bau menyengat yang dilepaskan oleh gunung berapi dan beberapa pemrosesan industri. Karena batu bara dan minyak bumi juga mengandung senyawa belerang, hasil pembakarannya juga menghasilkan gas belerang dioksida walaupun senyawa belerangnya telah dipisahkan dulu sebelum dibakar. Oksidasi lanjut dari SO2, dibantu dengan katalis seperti NO2, akan membentuk H2SO4, sehingga akan membentuk hujan asam."
     },
     {
       "id": "11",
@@ -86,7 +126,11 @@
       "modelpath": "PCl5.glb",
       "modelar": "PCl5.sfb",
       "modelarflutter": "PCl5/PCl5.gltf",
-      "description": "A"
+      "nameFormula": "AX5",
+      "shapeFormula": "Trigonal Bipiramidal",
+      "nameMol": "PCl5",
+      "fullnameMol": "Fosforus pentaklorida",
+      "description": "Senyawa ini merupakan salah satu klorida fosforus yang penting, yang lainnya termasuk PCl3 dan POCl3. PCl5 digunakan sebagai pereaksi pengklorinasi. Senyawa ini merupakan padatan tak berwarna, sensitif terhadap air dan kelembapan, meskipun sampel komersial bisa berwarna kekuningan dan terkontaminasi dengan hidrogen klorida."
     },
     {
       "id": "12",
@@ -94,7 +138,11 @@
       "modelpath": "SF4.glb",
       "modelar": "SF4.sfb",
       "modelarflutter": "SF4/SF4.gltf",
-      "description": "A"
+      "nameFormula": "AX4E",
+      "shapeFormula": "Disfeneoidal",
+      "nameMol": "SF4",
+      "fullnameMol": "Belerang(IV) fluorida",
+      "description": "senyawa ini hadir sebagai gas pada kondisi standar. Senyawa ini adalah spesi korosif yang melepaskan asam HF yang berbahaya saat terpapar air atau uap air. Terlepas dari karakteristik yang tidak diinginkan ini, senyawa ini merupakan pereaksi kimia berguna untuk pembuatan senyawa organofluorin,[3] beberapa di antaranya penting dalam industri farmasi dan industri kimia."
     },
     {
       "id": "13",
@@ -102,7 +150,11 @@
       "modelpath": "SF6.glb",
       "modelar": "SF6.sfb",
       "modelarflutter": "SF6/SF6.gltf",
-      "description": "A"
+      "nameFormula": "AX6",
+      "shapeFormula": "Oktahedral",
+      "nameMol": "SF6",
+      "fullnameMol": "Belerang heksafluorida",
+      "description": " Senyawa dalam bentuk suatu gas anorganik yang tidak berwarna, tidak berbau, tidak mudah terbakar, dan sangat berpotensi merupakan gas rumah kaca, yang mana ia merupakan insulator listrik yang baik.[4] SF6 memiliki geometri molekul oktahedral, terdiri dari enam atom fluor yang menempel pada atom pusat belerang. Senyawa ini adalah molekul hipervalen. Khas pada gas nonpolar, senyawa ini sangat buruk larut dalam air namun cukup mudah larut dalam pelarut organik nonpolar. Senyawa ini umumnya diangkut sebagai gas cair yang dikompres."
     },
     {
       "id": "14",
@@ -110,7 +162,11 @@
       "modelpath": "XeF2.glb",
       "modelar": "XeF2.sfb",
       "modelarflutter": "XeF2/XeF2.gltf",
-      "description": "A"
+      "nameFormula": "AX2E3",
+      "shapeFormula": "Linear",
+      "nameMol": "XeF2",
+      "fullnameMol": "Xenon(II) fluorida",
+      "description": "adalah senyawa Fluorinationg agent yang kuat.Senyawa ini merupakan salah satu yang paling stabil dalam kelompok gas mulia,yang dapat terurai ketika kontak dengan uap air.Memiliki bentuk kristal padat tak bewarna."
     },
     {
       "id": "15",
@@ -118,7 +174,11 @@
       "modelpath": "XeF4.glb",
       "modelar": "XeF4.sfb",
       "modelarflutter": "XeF4/XeF4.gltf",
-      "description": "A"
+      "nameFormula": "AX4E2",
+      "shapeFormula": "Bujursangkar",
+      "nameMol": "XeF4",
+      "fullnameMol": "Xenon tetrafluorida",
+      "description": " Senyawa ini adalah senyawa gas murni yang pertama kali ditemukan. Senyawa ini dihasilkan dari reaksi kimia gas xenon dan fluorin.Berbentuk kirtasl padat tak bewarna dalam keadaan normal, dan ditemukan menggunakan teknik spektrospoi NMR dan kristalgrafi sinar-X. Ia stabil pada suhu dan tekanan normal. Semuanya bisa terus bereaksi dengan air, melepaskan gas xenon murni, hidrogen fluorida dan molekul oksigen. Reaksi ini berlaku di udara yang sedikit lembab. Oleh karena itu, XeF4 harus ditempatkan di tempat khusus."
     }
   ]
 }
